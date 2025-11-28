@@ -1,0 +1,187 @@
+
+/* ------------------------|
+|                          |
+|       STYLE HEADER       |
+|                          |
+| -------------------------|
+*/
+
+header {
+  @include transition(0.6s);
+  @include fixed($t: 0, $z: 200);
+  width: 100%;
+  height: 125px;
+  background: none;
+  padding-top: 40px;
+
+
+  .navbar-burger {
+    // background-color: #C9BCA2;
+    // border-radius: 26px;
+    color: $primary-color;
+    margin-top: 5px;
+    // margin-right: 25px;
+    display: block;
+    transform: scale(1.3);
+    height: 2.6rem;
+    width: 3.2rem;
+
+    span {
+      background-color: #5F584D;
+      @include transition();
+    }
+
+    &:hover {
+      background: $primary-color;
+
+      span {
+        background-color: #FFF;
+      }
+    }
+
+    &.is-active {
+      span {
+        background-color: #FFF;
+      }
+
+      &:hover {
+        span {
+          background-color: $secondary-color;
+        }
+      }
+    }
+  }
+
+
+  // &.is-hide{
+  //    top: -125px;
+  //    .logo{ opacity: 0; }
+  // }
+
+  &.is-compact {
+    padding-top: 15px;
+    height: 80px;
+    overflow: hidden;
+    background-color: rgba(227, 222, 210, 0.9);
+    backdrop-filter: blur(6px);
+
+    .logo {
+      max-width: 90px;
+    }
+
+    // .navbar-burger{ margin-top: 21px; }
+  }
+
+
+  .logo {
+    // max-width: 256px;
+    margin: 10px 0 0;
+    transition: all 1s cubic-bezier(0.38, 0, .02, 1);
+  }
+
+  .links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    @include transition(0.6s);
+
+    a {
+      color: $root-color;
+      font-size: 1.5em;
+      font-weight: 500;
+      font-family: 'neue-haas-unica';
+      position: relative;
+      letter-spacing: 1px;
+      @include before(#49433b, 0, 1px, 0, 115%, $time: 0.7s);
+
+      &:hover {
+        // color: $primary-color;
+        color: #49433b;
+
+        &:before {
+          width: 100%;
+        }
+      }
+
+      &.is-active {
+        color: $primary-color;
+
+        &:before {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+
+/* ------------------------|
+|                          |
+|         MENU FLOAT       |
+|                          |
+| -------------------------|
+*/
+
+.menu {
+  @include fixed($t: 0, $r: -100%, $z: 200);
+  @include size(100%, 100vh);
+  display: flex;
+  overflow: hidden;
+  transition: all 1s cubic-bezier(0.54, 0.18, 0.13, 1);
+  background-color: $root-color;
+  opacity: 0;
+
+  &.is-active {
+    right: 0;
+    opacity: 1;
+  }
+
+  .container-menu {
+    margin-top: 23vh;
+    margin-left: 35vw;
+    position: relative;
+    width: 100%;
+  }
+
+  .bt-close-menu {
+    @include absolute($t: 45px, $r: 60px);
+    @include transition(0.6s);
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.2) rotate(90deg);
+    }
+  }
+
+  .logo {
+    @include absolute($b: 7%, $l: 6vw);
+    @include size(90px, 30px);
+    // display: block;
+  }
+
+  .phone {
+    @include absolute($b: 7%, $r: 6vw);
+
+    a {
+      letter-spacing: 0.3em;
+    }
+  }
+
+  .menu-item {
+    // font-family: 'neue-haas-unica';
+    // font-size: 3.5em;
+    @include fs-vw(5.8);
+    // font-weight: 700;
+    line-height: 1.2vh;
+    display: inline-block;
+    margin-bottom: 8.0vh;
+    color: $ll-gray;
+    // letter-spacing: 1.5px;
+    @include transition(0.7s);
+
+    &:hover, &.current {
+      color: $dark-color;
+      transform: translateX(20px);
+    }
+  }
+}

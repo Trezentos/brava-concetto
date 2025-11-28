@@ -1,0 +1,187 @@
+/* ------------------------|
+|                          |
+|       STYLE HOME         |
+|                          |
+| -------------------------|
+*/
+.section-banner {
+  background: url(../img/bg-texture-dark.webp);
+  letter-spacing: 1.5em;
+  line-height: 2.6;
+  padding-top: 0;
+
+
+  hr {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .video-container {
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 50px;
+
+    &, iframe, .cover-aram {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1920 / 900;
+    }
+
+    .cover-aram {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      z-index: 3;
+    }
+
+    button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 5;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      i {
+        color: #84786a;
+        font-size: 42px;
+      }
+
+      &:hover ~ .cover-aram {
+        filter: brightness(0.85);
+      }
+    }
+
+    img.cover-aram {
+      transition: 0.4s;
+      aspect-ratio: 1920 / 900;
+      object-fit: cover;
+
+      filter: brightness(0.6);
+    }
+  }
+}
+
+.box-video {
+  max-height: clamp(500px, 56.25vw, 1080px);
+  overflow: hidden;
+}
+
+
+/* SET ARROWS - OWL CAROUSEL */
+
+.owl-nav {
+  button.owl-next, button.owl-prev {
+    border-radius: 50% !important;
+
+    img {
+      display: block;
+      transition: all 0.2s linear;
+    }
+
+    &:hover {
+      background-color: $root-color !important;
+    }
+  }
+
+  button {
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button.owl-next {
+    margin-left: 15px !important;
+  }
+}
+
+
+.section-block-3 {
+  background: url(../img/bg-texture.webp);
+
+  .num {
+    font-size: 3.4em;
+    font-weight: 500;
+    border: 1px solid $root-color;
+    border-radius: 50%;
+    @include size(48px);
+    line-height: 1.25;
+  }
+
+  h4 {
+    letter-spacing: 0.2em;
+  }
+
+  p {
+    font-size: 1.2em;
+    letter-spacing: 0.15em;
+  }
+
+  .tag {
+    font-size: 1em;
+    background-color: $root-color;
+    padding: 6px 10px 5px;
+    color: #FFF;
+    display: inline-block;
+  }
+}
+
+.casa-brisa {
+  background: url(../img/casa-brisa.webp) center top;
+  background-size: cover;
+  padding-bottom: calc(52% - 132px);
+
+  h2 {
+    color: $ll-gray;
+    font-size: 2em;
+    letter-spacing: 0.5em;
+  }
+}
+
+
+.section-localizacao {
+  background: linear-gradient(to bottom, #FFF 52%, $dark-color 52%);
+
+  .address {
+    letter-spacing: 0.4em;
+  }
+
+  .proximidades {
+    .item {
+      p {
+        font-size: 2em;
+        font-family: 'quiche-sans';
+      }
+
+      small {
+        font-size: 1.2em;
+        letter-spacing: 0.05em;
+      }
+    }
+  }
+
+  .maps {
+    filter: sepia(72%) brightness(78%) hue-rotate(335deg) saturate(107%) contrast(99%);
+    -webkit-filter: sepia(72%) brightness(78%) hue-rotate(335deg) saturate(107%) contrast(99%);
+    -moz-filter: sepia(72%) brightness(78%) hue-rotate(335deg) saturate(107%) contrast(99%);
+  }
+}
+
+
+
+.section-rodape {
+  background: url(../img/img-footer.webp) center top;
+  height: 436px;
+}
+
+
+.fancybox-caption__body {
+  color: #FFF;
+}

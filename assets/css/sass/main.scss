@@ -1,0 +1,34 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font: 62.5% 'neue-haas-unica', sans-serif;
+  font-weight: 400;
+  color: $root-color;
+  background: #FFF;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  overflow-x: hidden;
+  text-rendering: optimizeSpeed;
+}
+
+
+.wrap {
+  max-width: 1230px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  &.compact {
+    max-width: 1000px;
+  }
+
+  &.wide {
+    max-width: 1470px;
+  }
+}
+
+section {
+  padding: 90px 0;
+}

@@ -106,24 +106,17 @@ $pg = $_SEO["permalink"];
 
 				<div class="columns is-mobile">
 
-					<div class="column is-6-tablet is-4-mobile waypoint animation_left_dd1">
-						<a href="<?=HTTP?>" title="<?=EMPRESA?>">
-							<img src="<?=IMG?>aram-logo-dark.svg" alt="logo <?=EMPRESA?>" class="logo">
-						</a>
+					<div class="column is-1 is-6-tablet is-4-mobile waypoint animation_left_dd1">
+                        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                        </a>
 					</div>
 
 
-					<div class="column is-5-tablet is-7-mobile has-text-right pr25-mobile waypoint animation_right_dd2">
-						<a href="#contato" class="btn is-transparent mt0 mb0 smooth-scroll-link"><span>Solicitar Contato</span></a>
-					</div>
+					<div class="column is-11 is-1-tablet is-2-mobile is-relative waypoint animation_right_dd2">
 
-
-					<div class="column is-1-tablet is-2-mobile is-relative waypoint animation_right_dd2">
-						<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-							<span aria-hidden="true"></span>
-							<span aria-hidden="true"></span>
-							<span aria-hidden="true"></span>
-						</a>
 					</div>
 
 				</div>

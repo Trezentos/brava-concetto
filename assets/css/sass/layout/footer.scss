@@ -1,0 +1,21 @@
+/* ------------------------|
+|                          |
+|          FOOTER          |
+|                          |
+| -------------------------|
+*/
+
+footer {
+  padding-top: 30px;
+  padding-bottom: 50px;
+
+  .assinatura {
+    color: $primary-color;
+
+    a {
+      &:hover {
+        color: #FFF;
+      }
+    }
+  }
+}

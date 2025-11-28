@@ -1,0 +1,72 @@
+
+/* ------------------------|
+|                          |
+|       STYLE INPUT        |
+|                          |
+| -------------------------|
+*/
+
+input, .input {
+  border: none;
+  border-bottom: 1px solid $primary-color;
+  border-radius: 0;
+  padding: 3px 0 8px;
+  @include size(100%, auto);
+  @include text($secondary-color, $size: 1.4em);
+  outline: none;
+  background: none;
+  font-family: 'neue-haas-unica';
+  letter-spacing: 1px;
+  box-shadow: none;
+
+  @include placeholder {
+    color: $secondary-color;
+  }
+}
+
+.select {
+  height: auto !important;
+  width: 100%;
+}
+
+.select select {
+  border: none;
+  border-bottom: 2px solid $primary-color;
+  border-radius: 0;
+  padding: 9px 23px 12px 0;
+  height: auto;
+  @include text($primary-color, $size: 2em);
+  font-family: 'neue-haas-unica' !important;
+  background: #FFF;
+  transition: all 0.2s linear;
+  width: 100%;
+  box-shadow: none !important;
+}
+
+.select:not(.is-multiple):not(.is-loading)::after {
+  border-color: #AAA;
+  border-width: 2px;
+}
+
+textarea, .textarea {
+  border: none;
+  border-bottom: 1px solid $primary-color;
+  border-radius: 0;
+  padding: 14px 0;
+  width: 100%;
+  @include text($secondary-color, $size: 1.4em);
+  outline: none;
+  background: none;
+  font-family: 'neue-haas-unica';
+  letter-spacing: 1px;
+
+  @include placeholder {
+    color: $secondary-color;
+  }
+}
+
+
+.input:focus, .textarea:focus, .select select:focus, .input:active, .textarea:active, .select select:active {
+  border-color: $secondary-color;
+  box-shadow: none;
+}

@@ -14,26 +14,120 @@
 // }
 
 
-
-
-
 // VARS
 
-$root-color:        #84786A;
+$root-color: #84786A;
 
-$primary-color:     #b8ae9a;
-$secondary-color:   #E3DED2;
+$primary-color: #b8ae9a;
+$secondary-color: #E3DED2;
 
-$dark-color:        #23211C;
-$light-color:       #98d2ec;
-$lighter-color:     #c2bb82;
+$dark-color: #23211C;
+$light-color: #98d2ec;
+$lighter-color: #c2bb82;
 
-$gray-color:        #7E7E7E;
-$l-gray:            #dfdfdf;
-$ll-gray:           #E7E4DC;
-$d-gray:            #d3cebb;
-$grey: $gray-color; $l-grey: $l-gray; $ll-grey: $ll-gray; $d-grey: $d-gray;
+$gray-color: #7E7E7E;
+$l-gray: #dfdfdf;
+$ll-gray: #E7E4DC;
+$d-gray: #d3cebb;
+$grey: $gray-color;
+$l-grey: $l-gray;
+$ll-grey: $ll-gray;
+$d-grey: $d-gray;
 
+
+/* ------------------------|
+|                          |
+|  STYLE CLASSES PADRÕES   |
+|                          |
+| -------------------------|
+*/
+
+
+.is-absolute {
+  position: absolute;
+}
+
+.bg-white {
+  background: #FFF !important;
+}
+
+.bg-gray {
+  background: $gray-color !important;
+}
+
+.bg-l-gray {
+  background: $l-gray !important;
+}
+
+.bg-ll-gray {
+  background: $ll-gray !important;
+}
+
+.bg-root {
+  background: $root-color !important;
+}
+
+.bg-primary {
+  background: $primary-color !important;
+}
+
+.bg-secondary {
+  background: $secondary-color !important;
+}
+
+.color-root {
+  color: $root-color;
+}
+
+.color-primary {
+  color: $primary-color !important;
+}
+
+.color-secondary {
+  color: $secondary-color !important;
+}
+
+.color-white {
+  color: #FFF !important;
+}
+
+.color-gray {
+  color: $gray-color !important
+}
+
+.color-gray-light {
+  color: $ll-gray !important
+}
+
+.is-pointer-off {
+  pointer-events: none;
+}
+
+.z-index-0 {
+  z-index: 0;
+}
+
+.z-index-1 {
+  z-index: 1;
+}
+
+.z-index-2 {
+  z-index: 2;
+}
+
+.lp-0 {
+  letter-spacing: 0;
+}
+
+
+.box {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+address {
+  font-style: normal;
+}
 
 
 // ////////////////////////////// MIXINS
@@ -41,162 +135,162 @@ $grey: $gray-color; $l-grey: $l-gray; $ll-grey: $ll-gray; $d-grey: $d-gray;
 // Background
 
 @mixin bg-img($img, $rep:no-repeat, $h:center, $v:top) {
-    background: url('../img/#{$img}') $rep $h $v;
+  background: url('../img/#{$img}') $rep $h $v;
 }
 
 // Animation 
 
 @mixin transition($time:0.4s) {
-    transition: all $time cubic-bezier(0.38,0,.02,1);
+  transition: all $time cubic-bezier(0.38, 0, .02, 1);
 }
 
 // Text
 
 @mixin text($color:null, $size: null, $weight: null, $align: null, $up:0, $i:0, $lh: null) {
-    color: $color;
-    font-weight: $weight;
-    font-size: $size;
-    text-align: $align;
-    line-height: $lh;
-    @if ($up == 1) {
-        text-transform: uppercase;
-    }
-    @if ($i == 1) {
-        font-style: italic;
-    }
+  color: $color;
+  font-weight: $weight;
+  font-size: $size;
+  text-align: $align;
+  line-height: $lh;
+  @if ($up == 1) {
+    text-transform: uppercase;
+  }
+  @if ($i == 1) {
+    font-style: italic;
+  }
 }
 
 
 @mixin fs-vw($em-value, $base-width: 1920) {
-    $vw-size: ($em-value * 1000) / $base-width;
-    font-size: #{$vw-size}vw;
+  $vw-size: ($em-value * 1000) / $base-width;
+  font-size: #{$vw-size}vw;
 }
 
 
 // Button
 
 @mixin btn($bg:$main, $color:#fff, $border:null) {
-    background: $bg;
-    color: $color;
-    @if ($border != null) {
-        border-bottom: 3px solid $border;
-    }
+  background: $bg;
+  color: $color;
+  @if ($border != null) {
+    border-bottom: 3px solid $border;
+  }
 }
 
 // Size
 
 @mixin size($width,$height:$width) {
-    width: $width;
-    height: $height;
+  width: $width;
+  height: $height;
 }
 
 // Positions
 
 @mixin position($position, $t: null, $r: null, $b: null, $l: null, $z: 0) {
-    position: $position;
-    top: $t;
-    right: $r;
-    bottom: $b;
-    left: $l;
-    @if ($z != 0) {
-        z-index: $z;
-    }
+  position: $position;
+  top: $t;
+  right: $r;
+  bottom: $b;
+  left: $l;
+  @if ($z != 0) {
+    z-index: $z;
+  }
 }
 
 @mixin relative($args...) {
-    @include position(relative, $args...);
+  @include position(relative, $args...);
 }
 
 @mixin absolute($args...) {
-    @include position(absolute, $args...);
+  @include position(absolute, $args...);
 }
 
 @mixin fixed($args...) {
-    @include position(fixed, $args...);
+  @include position(fixed, $args...);
 }
 
 // Centralizar Absolutes
 
 @mixin abs-center($ml, $t:null,$b:null,$z:0) {
-    position: absolute;
-    left: 50%;
-    margin-left: $ml;
-    top: $t;
-    bottom: $b;
-    @if ($z != 0) {
-        z-index: $z;
-    }
+  position: absolute;
+  left: 50%;
+  margin-left: $ml;
+  top: $t;
+  bottom: $b;
+  @if ($z != 0) {
+    z-index: $z;
+  }
 }
 
 // Flex
 
 @mixin flex($hori:null, $vert:null, $wrap:0) {
-    display: flex;
-    @if($wrap == 1) {
-        flex-wrap: wrap;
-    }
-    @if($hori) {
-        justify-content: $hori;
-    }
-    @if($vert) {
-        align-items: $vert;
-    }
+  display: flex;
+  @if ($wrap == 1) {
+    flex-wrap: wrap;
+  }
+  @if ($hori) {
+    justify-content: $hori;
+  }
+  @if ($vert) {
+    align-items: $vert;
+  }
 }
 
 
 // Main Pseudos
 
 @mixin before($color:null, $w:null, $h:null, $bl:null, $bt:-50%, $o:null, $time:0.4s) {
-    &:before {
-        content:'';
-        background: $color;
-        @include size($w, $h);
-        @include absolute($t: $bt, $l: $bl);
-        @include transition($time);
-        opacity: $o;
-        // z-index: -1;
-    }
-}
-
-@mixin after($color:null, $bb:null, $bl:null, $w:35px, $h:3px) {
-    @include relative;
-    &:after {
-        content:'';
-        background: $color;
-        @include size($w, $h);
-        @include absolute($b: $bb, $l: $bl);
-        @include transition;
-    }
-}
-
-@mixin bar($color:null, $w:null, $h:null, $bl:null, $bt:-50%) {
+  &:before {
+    content: '';
     background: $color;
     @include size($w, $h);
     @include absolute($t: $bt, $l: $bl);
+    @include transition($time);
+    opacity: $o;
+    // z-index: -1;
+  }
+}
+
+@mixin after($color:null, $bb:null, $bl:null, $w:35px, $h:3px) {
+  @include relative;
+  &:after {
+    content: '';
+    background: $color;
+    @include size($w, $h);
+    @include absolute($b: $bb, $l: $bl);
     @include transition;
+  }
+}
+
+@mixin bar($color:null, $w:null, $h:null, $bl:null, $bt:-50%) {
+  background: $color;
+  @include size($w, $h);
+  @include absolute($t: $bt, $l: $bl);
+  @include transition;
 }
 
 
 @mixin optional-at-root($sel) {
-    @at-root #{if(not &, $sel, selector-append(&, $sel))} {
-        @content;
-    }
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
 }
 
 @mixin placeholder {
-    @include optional-at-root('::-webkit-input-placeholder') {
-        @content;
-    }
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
 
-    @include optional-at-root(':-moz-placeholder') {
-        @content;
-    }
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
 
-    @include optional-at-root('::-moz-placeholder') {
-        @content;
-    }
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
 
-    @include optional-at-root(':-ms-input-placeholder') {
-        @content;
-    }
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
 }
