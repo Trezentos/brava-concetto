@@ -69,67 +69,78 @@
   }
 }
 
-.box-video {
-  max-height: clamp(500px, 56.25vw, 1080px);
-  overflow: hidden;
-}
 
+.section-intro {
+  .content {
+    display: grid;
+    grid-template-columns: 739fr 761fr;
 
-/* SET ARROWS - OWL CAROUSEL */
+    .left {
 
-.owl-nav {
-  button.owl-next, button.owl-prev {
-    border-radius: 50% !important;
+      .image-container img {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      }
 
-    img {
-      display: block;
-      transition: all 0.2s linear;
+      .skills-block {
+        padding-left: 105px;
+
+        hr {
+          width: 100%;
+          background: $ocre-escuro;
+          height: 2px;
+          margin-top: 70px;
+        }
+
+        div {
+          width: 100%;
+          max-width: 307px;
+
+          p strong {
+            font-size: 30px;
+          }
+
+          p {
+            font-family: $font-secondary;
+            font-size: 24px;
+          }
+
+          hr {
+            background: $root-color;
+            height: 1px;
+            margin-top: 33px;
+          }
+        }
+      }
     }
 
-    &:hover {
-      background-color: $root-color !important;
+    .right {
+
+      .text-container {
+        padding-left: 124px;
+
+
+        h2, p {
+          max-width: 480px;
+        }
+
+
+        position: relative;
+
+        .paper-background {
+          position: absolute;
+          top: 0;
+          right: 0;
+          max-width: unset;
+          z-index: -1;
+        }
+      }
+
+      .image-container {
+
+      }
+
     }
-  }
 
-  button {
-    &:focus {
-      outline: none;
-    }
-  }
-
-  button.owl-next {
-    margin-left: 15px !important;
-  }
-}
-
-
-.section-block-3 {
-  background: url(../img/bg-texture.webp);
-
-  .num {
-    font-size: 3.4em;
-    font-weight: 500;
-    border: 1px solid $root-color;
-    border-radius: 50%;
-    @include size(48px);
-    line-height: 1.25;
-  }
-
-  h4 {
-    letter-spacing: 0.2em;
-  }
-
-  p {
-    font-size: 1.2em;
-    letter-spacing: 0.15em;
-  }
-
-  .tag {
-    font-size: 1em;
-    background-color: $root-color;
-    padding: 6px 10px 5px;
-    color: #FFF;
-    display: inline-block;
   }
 }
 

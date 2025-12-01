@@ -3,7 +3,7 @@
 # GET DATABASE --------------------------------------------------------------------------------------------------- 
 
 # BANNERS
-// $qBanners = $db->get_results("SELECT * FROM ".$tables['BANNERS']." WHERE status=1 ORDER BY ordem ASC");
+$qBanners = $db->get_results("SELECT * FROM ".$tables['BANNERS']." WHERE status=1 ORDER BY ordem ASC");
 
 # GALERIA ONDA
 $qGaleria1 = $db->get_results("SELECT * FROM {$tables['GALERIA_IMG']} WHERE ativo=1 AND id_galeria=1 ORDER BY ordem ASC");
@@ -21,6 +21,7 @@ $qCasas = $db->get_results("SELECT * FROM {$tables['CASAS']} WHERE status=1 ORDE
 
 
 
+
 $ic = '<svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<path d="M1 0.5L8 7.5L1 14.5" stroke="white"/>
 	   </svg>';
@@ -34,6 +35,8 @@ if( !IS_LIGHTHOUSE )
 		'css/owl.theme.default.min.css', 
 		'css/jquery.fancybox.min.css'
 	]);
+
+
 
 	add_javascript([
 		'owl.carousel.min.js',
@@ -50,66 +53,117 @@ get_header();
 ?>
 
 
-<section class="section-banner">
-    <div class="video-container ">
-        <div id="video-container"  data-video="F6l6tqezC50" class="video-container-iframe"> </div>
-        <button id="bt-play">
-            <img src="<?=IMG.'icons/play.svg'?>" class="" alt="">
-        </button>
-        <img src="<?=IMG.'brava-concetto-hero.webp'?>" class="cover-aram" alt="aram video">
-    </div>
-    <div class="wrap">
-        <div class="columns is-centered is-mobile">
-            <div class="column is-6-desktop is-8-tablet is-10-mobile has-text-centered">
-                <hr class="mt0 waypoint animation_scale">
-                <p class="mt40 mb40">
-                    CASAS<br class="is-hidden-tablet">
-                    ENVOLTAS<br class="is-hidden-tablet">
-                    POR <br>
-                    NATUREZA <br class="is-hidden-tablet">
-                    COM O MÁXIMO <br>
-                    DE PRIVACIDADE.
-                </p>
-                <hr class="mb10 waypoint animation_scale">
+<!--<section class="section-banner">-->
+<!--    <div class="video-container ">-->
+<!--        <div id="video-container"  data-video="F6l6tqezC50" class="video-container-iframe"> </div>-->
+<!--        <button id="bt-play">-->
+<!--            <img src="--><?php //=IMG.'icons/play.svg'?><!--" class="" alt="">-->
+<!--        </button>-->
+<!--        <img src="--><?php //=IMG.'brava-concetto-hero.webp'?><!--" class="cover-aram" alt="aram video">-->
+<!--    </div>-->
+<!--</section>-->
+
+
+
+
+<div
+        class="cycle-slideshow main-banners"
+        data-cycle-slides=".li"
+        data-cycle-timeout="700000"
+        data-cycle-pause-on-hover="false"
+        data-cycle-log="false"
+        data-cycle-speed="1000"
+        data-cycle-pager-template="<div class='pager-button'><span></span></div>"
+>
+
+    <?php foreach($qBanners as $banner): ?>
+        <div class="li" style="background-image: url(<?=HTTP_UPLOADS_IMG.$banner->imagem?>)">
+<!--            <img src="--><?php //=HTTP_UPLOADS_IMG.$banner->imagem?><!--" alt="--><?php //=$banner->titulo?><!--">-->
+        </div>
+    <?php endforeach; ?>
+    <div class="cycle-pager "></div>
+
+</div>
+
+
+
+
+
+
+
+
+<section class="section-intro" >
+	<div class="wrap">
+
+        <div class="content">
+            <div class="left">
+                <div class="image-container">
+                    <img src="<?=IMG.'brava-concetto-design.jpg'?>" class="" alt="">
+                </div>
+
+                <div class="skills-block">
+                    <hr>
+
+                    <div>
+                        <p><strong>arquitetura</strong></p>
+
+                        <hr>
+                        <p>paisagismo</p>
+
+                        <hr>
+                        <p>interiores</p>
+
+                        <hr>
+                        <p>luminotécnico</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="text-container pl125 pl80-notebook">
+                    <h2>
+                        frase conceito sobre <br>
+                        o empreendimento
+                    </h2>
+                    <br><br><br>
+                    <p class="mt5">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id dui et tortor finibus laoreet. Vivamus cursus est vitae purus elementum ultricies. Aliquam erat volutpat. Suspendisse sollicitudin tempor arcu, et congue metus placerat vel. Maecenas enim ex, feugiat ac viverra vel, volutpat in urna.
+                    </p>
+                </div>
+
+
+                <div class="text-container pl125 pl80-notebook pt105 mt125">
+                    <img src="<?=IMG.'paper-background.png'?>" class="paper-background" alt="">
+
+                    <h2>
+                        frase conceito texto <br>
+                        arquitetos
+                    </h2>
+                    <br><br>
+                    <p class="mt5">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id dui et tortor finibus laoreet. Vivamus cursus est vitae purus elementum ultricies. Aliquam erat volutpat. Suspendisse sollicitudin tempor arcu, et congue metus placerat vel. Maecenas enim ex, feugiat ac viverra vel, volutpat in urna.
+                    </p>
+                </div>
+                
+                <div class="image-container pl125 pl80-notebook mt85">
+                    <img src="<?=IMG.'debora-aguia-brava-concetto.jpg'?>" class="" alt="">
+
+                    <div>
+                        <strong>Débora Águia</strong><br>
+                        arquiteta e urbanista
+                    </div>
+
+                    <hr>
+                </div>
             </div>
         </div>
 
-    </div>
-</section>
-
-
-
-
-
-
-
-<section class="section-block-3" id="casas">
-	<div class="wrap">
- 		
- 		<div class="columns is-centered is-multiline mt100 mt20-mobile mb20">
-
-			<?php foreach($qCasas AS $rs){ ?>
-
-			<div class="column is-4 has-text-centered waypoint animation_bottom mb80 mb40-mobile">
-				<a href="#galeria<?=($rs->id < 4 ? '1' : '2'); ?>" class="smooth-scroll-link" data-smooth-time-link="2500">
-					<div class="num m-auto mb10 waypoint animation_scale"><?=$rs->id?></div>
-					<h3 class="mb10"><?=$rs->titulo?></h3>
-					<h4><?=$rs->subtitulo?></h4>
-
-					<p class="mt20"><?=nl2br($rs->texto); ?></p>
-
-					<?php if( $rs->vendido ){ ?>
-					<p class="tag mt15"><?=$rs->vendido; ?></p>
-					<?php } ?>
-				</a>
- 			</div>
-
-			<?php } ?>
- 		
-		</div>
-
 	</div>
 </section>
+
+
+
+
 
 
 <section class="section-home-contato bg-root color-gray-light pt70 pb70" id="contato">

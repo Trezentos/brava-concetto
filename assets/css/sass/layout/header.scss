@@ -7,29 +7,36 @@
 */
 
 header {
-  @include transition(0.6s);
+  @include transition(1s);
   @include fixed($t: 0, $z: 200);
   width: 100%;
-  height: 125px;
+  height: 165px;
   background: none;
-  padding-top: 40px;
 
 
   .navbar-burger {
-    // background-color: #C9BCA2;
-    // border-radius: 26px;
     color: $primary-color;
-    margin-top: 5px;
-    // margin-right: 25px;
     display: block;
-    transform: scale(1.3);
-    height: 2.6rem;
-    width: 3.2rem;
+    margin-left: 0;
+    height: 139px;
+    width: 144px;
+    position: relative;
+    z-index: 9999;
 
     span {
-      background-color: #5F584D;
+      background-color: $white-color-1;
+      width: 37px;
+      height: 3px;
+      border-radius: 5px;
       @include transition();
+      left: 50%;
+      transform: translateX(-50%) !important;
+
     }
+
+    span:nth-child(1) { top: calc(50% - 17px)  !important; }
+    span:nth-child(2) { top: calc(50%)  !important; opacity: 1 !important; }
+    span:nth-child(3) { top: calc(50% + 17px)  !important; }
 
     &:hover {
       background: $primary-color;
@@ -39,37 +46,37 @@ header {
       }
     }
 
-    &.is-active {
-      span {
-        background-color: #FFF;
-      }
-
-      &:hover {
-        span {
-          background-color: $secondary-color;
-        }
-      }
-    }
   }
 
-
-  // &.is-hide{
-  //    top: -125px;
-  //    .logo{ opacity: 0; }
-  // }
+  .brava-concetto-logo {
+    position: absolute;
+    top: 115px;
+    left: 177px;
+    transition: 0.8s;
+    width: 416px;
+  }
 
   &.is-compact {
-    padding-top: 15px;
+    padding-top: 0px;
     height: 80px;
-    overflow: hidden;
-    background-color: rgba(227, 222, 210, 0.9);
+    background-color: $root-color;
     backdrop-filter: blur(6px);
 
-    .logo {
-      max-width: 90px;
+    .brava-concetto-logo {
+      top: 35px;
+      width: 300px;
+
     }
 
-    // .navbar-burger{ margin-top: 21px; }
+     .navbar-burger{
+
+       height: 80px;
+       width: 80px;
+
+       span:nth-child(1) { top: calc(50% - 13px) !important; }
+       span:nth-child(2) { top: calc(50%); }
+       span:nth-child(3) { top: calc(50% + 13px) !important; }
+     }
   }
 
 
@@ -114,74 +121,3 @@ header {
   }
 }
 
-
-/* ------------------------|
-|                          |
-|         MENU FLOAT       |
-|                          |
-| -------------------------|
-*/
-
-.menu {
-  @include fixed($t: 0, $r: -100%, $z: 200);
-  @include size(100%, 100vh);
-  display: flex;
-  overflow: hidden;
-  transition: all 1s cubic-bezier(0.54, 0.18, 0.13, 1);
-  background-color: $root-color;
-  opacity: 0;
-
-  &.is-active {
-    right: 0;
-    opacity: 1;
-  }
-
-  .container-menu {
-    margin-top: 23vh;
-    margin-left: 35vw;
-    position: relative;
-    width: 100%;
-  }
-
-  .bt-close-menu {
-    @include absolute($t: 45px, $r: 60px);
-    @include transition(0.6s);
-    cursor: pointer;
-
-    &:hover {
-      transform: scale(1.2) rotate(90deg);
-    }
-  }
-
-  .logo {
-    @include absolute($b: 7%, $l: 6vw);
-    @include size(90px, 30px);
-    // display: block;
-  }
-
-  .phone {
-    @include absolute($b: 7%, $r: 6vw);
-
-    a {
-      letter-spacing: 0.3em;
-    }
-  }
-
-  .menu-item {
-    // font-family: 'neue-haas-unica';
-    // font-size: 3.5em;
-    @include fs-vw(5.8);
-    // font-weight: 700;
-    line-height: 1.2vh;
-    display: inline-block;
-    margin-bottom: 8.0vh;
-    color: $ll-gray;
-    // letter-spacing: 1.5px;
-    @include transition(0.7s);
-
-    &:hover, &.current {
-      color: $dark-color;
-      transform: translateX(20px);
-    }
-  }
-}

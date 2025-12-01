@@ -1,0 +1,119 @@
+.main-banners {
+  position: relative;
+
+  .cycle-pager {
+    position: absolute;
+    left: 74px;
+    bottom: 113px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 27px;
+
+
+    div.pager-button {
+      background-color: transparent;
+      font-size: 43px;
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.4s;
+
+      span {
+        width: 6px;
+        height: 6px;
+        background: white;
+        border-radius: 50%;
+        display: block;
+        transition: 0.4s;
+
+
+      }
+    }
+
+
+
+    div.pager-button.cycle-pager-active {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+      transition: 0.4s;
+      z-index: 999;
+      border: 1px solid $root-color;
+      position: relative;
+
+      span {
+        width: 13px;
+        height: 13px;
+        background: $root-color;
+        border-radius: 50%;
+        display: block;
+      }
+
+    }
+
+    span.cycle-pager-active {
+      width: 25px;
+      height: 25px;
+      //background: $ocre-escuro;
+
+    }
+  }
+
+
+  .li {
+    aspect-ratio: 1920/900;
+    width: 100%;
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation-duration: 18s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    img {
+      display: block;
+    }
+  }
+
+  // impar
+  .li:nth-child(odd) {
+    animation-name: bgMoveOdd;
+  }
+
+  // par
+  .li:nth-child(even) {
+    animation-name: bgMoveEven;
+  }
+
+
+  // KEYFRAMES
+  @keyframes bgMoveOdd {
+    0% {
+      background-position: 0px center;
+    }
+    50% {
+      background-position: calc((#{-200} / 1920) * 100vw) center;
+    }
+    100% {
+      background-position: 0px center;
+    }
+  }
+
+  @keyframes bgMoveEven {
+    0% {
+      background-position: center 0px;
+    }
+    50% {
+      background-position: center calc((#{-200} / 1920) * 100vw);
+    }
+    100% {
+      background-position: center 0px;
+    }
+  }
+}

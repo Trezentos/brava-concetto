@@ -32,7 +32,10 @@ $pg = $_SEO["permalink"];
 
 
 		<!-- FONTS -->
-		<link rel="stylesheet" href="https://use.typekit.net/ssx3mej.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
         <link rel="stylesheet" href="https://use.typekit.net/iab8qoz.css">
 
 
@@ -99,8 +102,7 @@ $pg = $_SEO["permalink"];
 
 
 	<header id="topo" class="xwaypoint xanimation_top">
-
-		<div class="wrap">
+		<div class="wrap super-wide-header">
 
 			<nav class="is-relative" role="navigation" aria-label="main navigation">
 
@@ -115,8 +117,8 @@ $pg = $_SEO["permalink"];
 					</div>
 
 
-					<div class="column is-11 is-1-tablet is-2-mobile is-relative waypoint animation_right_dd2">
-
+					<div class="column is-11 is-1-tablet is-2-mobile is-relative waypoint animation_left_dd2">
+                        <img src="<?=IMG.'brava-concetto-logo.svg'?>" class="brava-concetto-logo" alt="">
 					</div>
 
 				</div>
@@ -124,43 +126,9 @@ $pg = $_SEO["permalink"];
 			</nav>
 
 		</div>
-
 	</header>
 
-
-
-
-
-
-
-
-
-	<div class="menu waypoint animation_bottom">
-
-		<img class="bt-close-menu waypoint animation_scale" src="<?=IMG?>icons/close.svg" alt="Fechar">
-
-		<div class="container-menu xhas-text-centered">
-			<ul class="waypoint animation_right_d1 animated font-secondary">
-				<li> <a href="#empreendimento"  class="menu-item smooth-scroll-link" data-smooth-time-link="3000">O EMPREENDIMENTO</a></li>
-				<li> <a href="#casas" 			class="menu-item smooth-scroll-link" data-smooth-time-link="3000">CASAS</a></li>
-				<li> <a href="#equipe-tecnica" 	class="menu-item smooth-scroll-link" data-smooth-time-link="5000">EQUIPE TÉCNICA</a></li>
-				<li> <a href="#localizacao"  	class="menu-item smooth-scroll-link" data-smooth-time-link="5000">LOCALIZAÇÃO</a></li>
-				<li> <a href="#obras" 			class="menu-item smooth-scroll-link" data-smooth-time-link="5000">ESTÁGIO DA OBRA</a></li>
-				<li> <a href="#contato" 		class="menu-item smooth-scroll-link" data-smooth-time-link="5000">CONTATO</a></li>
-			</ul>
-		</div>
-
-		<img class="logo waypoint animation_right_d3 animated" src="<?=IMG?>aram-logo-light.svg" alt="logo">
-
-		<!-- <div class="phone font-secondary color-gray-light waypoint animation_right_d3 animated">
-			VAMOS CONVERSAR? <a href="<?=LINK_WHATSAPP?>" target="_blank" class="ml20 ml0-mobile is-block-mobile">55 <?=CELULAR?></a>
-		</div> -->
-
-	</div>
-
-
-
-
+    <?php include TEMPLATE.'includes/menu.php' ?>
 
 	<!-- MAIN -->
 	<main class="smooth-scroll-container">

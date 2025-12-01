@@ -70,6 +70,13 @@ get_barra_header();
 				</div>
 			</div>
 
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label>Endereço</label>
+                    <input type="text" class="form-control input-sm" name="endereco" required value="<?php echo $q->endereco; ?>" />
+                </div>
+            </div>
+
 			<br><br>
 
 			<h3>Redes Sociais</h3>

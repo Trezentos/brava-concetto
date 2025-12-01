@@ -9,6 +9,7 @@ if($_POST && isset($_POST['submit']))
 		'telefone'  				=> $_POST['telefone'],
 		'celular'  					=> $_POST['celular'],
 		'celular2'  				=> $_POST['celular2'],
+		'endereco'  				=> $_POST['endereco'],
 		'email_contato'  			=> $_POST['email_contato'],
 
 		'instagram'  				=> $_POST['instagram'],

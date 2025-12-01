@@ -3,19 +3,20 @@ html {
 }
 
 body {
-  font: 62.5% 'neue-haas-unica', sans-serif;
+  font: 62.5% $font-primary, sans-serif;
   font-weight: 400;
   color: $root-color;
-  background: #FFF;
+  background: $white-color-1;
   line-height: 1.5;
   letter-spacing: 0.05em;
   overflow-x: hidden;
   text-rendering: optimizeSpeed;
 }
 
+img { display: block; }
 
 .wrap {
-  max-width: 1230px;
+  max-width: 1530px;
   width: 100%;
   margin: 0 auto;
   padding: 0 15px;
@@ -26,6 +27,12 @@ body {
 
   &.wide {
     max-width: 1470px;
+  }
+
+  &.super-wide-header {
+    max-width: 1890px;
+    padding: 0;
+    margin: 0;
   }
 }
 

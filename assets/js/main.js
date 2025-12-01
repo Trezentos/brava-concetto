@@ -86,10 +86,13 @@ jQuery(document).ready(function($)
 
 
 	// MENU
-
+	$('.menu .main-logo').fadeOut(0);
 	$('.menu ul').fadeOut(0);
 	$('.menu .logo').fadeOut(0);
-	$('.menu .phone').fadeOut(0);
+	$('.menu .redes-sociais-menu').fadeOut(0);
+
+
+
 
 	$('.navbar-burger').click(function(e)
 	{
@@ -98,9 +101,10 @@ jQuery(document).ready(function($)
 		if( $(this).hasClass("is-active") )
 		{
 			// CLOSE
+			$('.menu .main-logo').fadeOut(800);
 			$('.menu ul').fadeOut(800);
 			$('.menu .logo').fadeOut(300);
-			$('.menu .phone').fadeOut(100);
+			$('.menu .redes-sociais-menu').fadeOut(100);
 
 			setTimeout( () => { $('.menu').removeClass("is-active"); }, 1000);
 		}
@@ -110,9 +114,10 @@ jQuery(document).ready(function($)
 			$('.menu').addClass('is-active');
 
 			setTimeout( () => { 
+				$('.menu .main-logo').fadeIn(0);
 				$('.menu ul').fadeIn(0);
 				$('.menu .logo').fadeIn(0);
-				$('.menu .phone').fadeIn(0);
+				$('.menu .redes-sociais-menu').fadeIn(0);
 			}, 800);
 		}
 
@@ -123,9 +128,10 @@ jQuery(document).ready(function($)
 
 	$('.bt-close-menu').click(function(e)
 	{
-		$('.menu ul').fadeOut(400);
+		$('.menu .main-logo').fadeOut(400);
+		$('.menu ul').fadeOut(300);
 		$('.menu .logo').fadeOut(300);
-		$('.menu .phone').fadeOut(300);
+		$('.menu .redes-sociais-menu').fadeOut(300);
 
 		$('.navbar-burger').toggleClass('is-active');
 
@@ -138,18 +144,6 @@ jQuery(document).ready(function($)
 	{
 		$('.bt-close-menu').click();
 	});
-
-	
-
-
-
-
-
-	
-
-
-
-
 
 
 	$('.slide-galeria').owlCarousel({

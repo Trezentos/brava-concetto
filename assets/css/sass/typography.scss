@@ -1,12 +1,10 @@
 
 
-.font-primary {
-  font-family: 'neue-haas-unica' !important;
-}
+$font-primary: 'Work Sans';
+$font-secondary: 'athena';
 
-.font-secondary {
-  font-family: 'quiche-sans' !important;
-}
+.font-primary {  font-family: $font-primary, sans-serif !important; }
+.font-secondary { font-family: $font-secondary, sans-serif !important;  }
 
 
 a {
@@ -29,7 +27,7 @@ h1, h2 {
   font-size: 3.4em;
   line-height: 1.1;
   font-weight: 400;
-  font-family: 'quiche-sans';
+  font-family: $font-primary;
   color: $root-color;
   letter-spacing: 0px;
   margin-bottom: 30px;
@@ -57,7 +55,7 @@ h1, h2 {
 
 h3 {
   font-size: 2.8em;
-  font-family: 'quiche-sans';
+  font-family: $font-primary;
   font-weight: 400;
   margin-bottom: 20px;
   transition: all 0.3s linear;
@@ -68,9 +66,13 @@ h3 {
   }
 }
 
+p {
+  font-size: 1.6em;
+}
+
 h4 {
   font-size: 2.2em;
-  font-family: 'quiche-sans';
+  font-family: $font-primary;
   font-weight: 400;
   line-height: 1.4;
   // color: $primary-color;

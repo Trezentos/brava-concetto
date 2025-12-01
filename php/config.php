@@ -218,6 +218,7 @@ define('GOOGLE_ANALYTICS', $qConfig->google_analytics);
 # PHONES
 define('TELEFONE_FIXO', $qConfig->telefone);
 define('CELULAR', $qConfig->celular);
+define('ENDERECO', $qConfig->endereco);
 
 
 
