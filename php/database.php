@@ -15,6 +15,8 @@ $tables['ACESSOS'] 		 	  	= PREFIX.'acessos';
 $tables['PAGINAS'] 			  	= PREFIX.'paginas';
 $tables['USUARIOS'] 		  	= PREFIX.'usuarios';
 $tables['BANNERS']			  	= PREFIX.'banners';
+$tables['PLANTAS']			  	= PREFIX.'plantas';
+$tables['PLANTAS_IMAGENS']		= PREFIX.'plantas_imagens';
 $tables['CADASTRO']				= PREFIX.'cadastro';
 $tables['CONFIG']			  	= PREFIX.'config';
 

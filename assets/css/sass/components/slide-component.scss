@@ -1,0 +1,163 @@
+.plantas-nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+
+  button.btn {
+    height: 80px;
+    width: 243px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 94px;
+    margin: 0;
+
+    &.cycle-pager-active {
+        background-color: $ocre-escuro;
+    }
+  }
+}
+
+
+.cycle-slideshow.plantas-slide .owl-dots {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  top: -28.645px;
+  position: relative;
+
+}
+.cycle-slideshow.plantas-slide .owl-dots .btn {
+  all: unset;
+  position: relative !important;
+  background: #b8b1a5 !important;
+  border: 1px solid #b8ae9a !important;
+  border-radius: 30px !important;
+  display: inline-block !important;
+  margin: 0 !important;
+  padding: 11px 32px 12px !important;
+  cursor: pointer !important;
+  transition: all .2s
+  linear !important;
+  height: auto !important;
+  max-width: 100% !important;
+  outline: none !important;
+  font-family: "Work Sans" !important;
+  overflow: hidden !important;
+  color: #fff !important;
+  font-weight: 400 !important;
+  font-size: 1.6em !important;
+  text-align: center !important;
+  line-height: 1.4 !important;
+
+
+
+  &.active, &:hover {
+    background: $ocre-escuro !important;
+
+    span { background: transparent;  }
+  }
+
+  span {
+    width: unset;
+    height: unset;
+    background: transparent;
+  }
+}
+
+.cycle-slideshow.plantas-slide {
+
+
+
+  .li {
+    width: 100%;
+
+    .owl-carousel {
+      position: relative;
+
+      .owl-nav {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -137%);
+        pointer-events: none;
+        margin-top: 0 !important;
+
+        button { pointer-events: all; }
+
+        svg path{
+          stroke: white;
+        }
+
+        button:hover {
+          background-color: transparent;
+
+          //svg path{ stroke: $blue-color; }
+
+        }
+
+        button.owl-prev {
+          position:relative;
+          right: 53px;
+        }
+
+        button.owl-next {
+          position:relative;
+          left: 185px;
+        }
+
+      }
+      .owl-stage-outer { overflow: visible; }
+      .owl-item img { width: unset; }
+      .owl-item { opacity: 0; transition: 0.4s; }
+      .owl-item.active { opacity: 1; }
+
+      .owl-item .item {
+        background: $ocre-claro;
+        min-height: 458px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 30px;
+
+        .info-block {
+          width: 416px;
+          height: 440px;
+          background: $root-color;
+          position: relative;
+          left: 110px;
+          color: white;
+          padding-top: 50px;
+          padding-left: 40px;
+          padding-right: 40px;
+
+          div {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 100px;
+
+            p {
+              font-size: 18px;
+              font-family: $secondary-font;
+            }
+          }
+
+
+          > p {
+            font-size: 16px;
+            padding-left: 30px;
+
+          }
+
+          h3 {
+            padding-left: 30px;
+          }
+        }
+
+
+      }
+
+    }
+  }
+}

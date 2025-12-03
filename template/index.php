@@ -17,6 +17,8 @@ $qObras = $db->get_results("SELECT * FROM {$tables['EMPREENDIMENTOS_IMG']} WHERE
 # CASAS
 $qCasas = $db->get_results("SELECT * FROM {$tables['CASAS']} WHERE status=1 ORDER BY ordem ASC");
 
+
+
 # -----------------------------------------------------------------------------------------------------------------
 
 
@@ -41,9 +43,9 @@ if( !IS_LIGHTHOUSE )
 
 	add_javascript([
 		'owl.carousel.min.js',
+		'jquery.fancybox.min.js',
 		'jquery.maskedinput.js',
 		'jquery.cycle2.min.js',
-		'jquery.fancybox.min.js',
 		'slide-custom.js',
         'animations.js',
         'videoconfig.js',
@@ -113,13 +115,13 @@ get_header();
                             <p class="waypoint animation_left_d1"><strong>arquitetura</strong></p>
 
                             <hr class="waypoint animation_elastic_d1">
-                            <p class="waypoint animation_left">paisagismo</p>
+                            <p class="waypoint animation_left color-root">paisagismo</p>
 
                             <hr class="waypoint animation_elastic_d1">
-                            <p class="waypoint animation_left_d1">interiores</p>
+                            <p class="waypoint animation_left_d1 color-root">interiores</p>
 
                             <hr class="waypoint animation_elastic_d1">
-                            <p class="waypoint animation_left_d2">luminotécnico</p>
+                            <p class="waypoint animation_left_d2 color-root">luminotécnico</p>
                         </div>
                     </div>
                 </div>
@@ -270,19 +272,19 @@ get_header();
 
     </div>
 </section>
-<?php endif; ?>
+
 
 
 <section class="section-plantas">
-    <div class="wrap">
+    <div class="wrap smaller">
         <div class="selo-container">
             <div class="image-container">
                 <img src="<?=IMG.'selo-gbc.png'?>" class="" alt="">
             </div>
 
             <div class="text-container">
-                <h2 class="mt20">selo de sustentabilidade</h2>
-                <p>
+                <h2 class="mt20 color-ocre-escuro">selo de sustentabilidade</h2>
+                <p class="color-ocre-escuro">
                     Infraestrutura para recarga de veículos elétricos <br>
                     e soluções que ampliam o bem-estar.
                 </p>
@@ -291,55 +293,66 @@ get_header();
             </div>
         </div>
 
-        <h2 class="has-text-centered mt125">
+        <h2 class="has-text-centered mt125 mb80 color-ocre-escuro">
             qual planta combina mais <br>
             com a sua familia
         </h2>
+
+
+        <?php include TEMPLATE.'includes/slide-component.php'; ?>
     </div>
 </section>
-
-<?php
-$aEstagiosObra = [
-	'escavacao'			 => 'ESCAVAÇÃO',
-	'fundacao' 			 => 'FUNDAÇÃO',
-	'estrutura' 		 => 'ESTRUTURA',
-	'alvenaria' 		 => 'ALVENARIA',
-	'acabamento_externo' => 'ACABAMENTO EXTERNO',
-	'acabamento_interno' => 'ACABAMENTO INTERNO',
-];
-?>
+<?php endif; ?>
 
 
-<section class="section-home-contato bg-root color-gray-light mt500">
-	<div class="wrap is-relative">
+<section class="mapa">
+    <h3>Mais que uma localização, uma escolha de vida</h3>
+    <p class="mb40"><?=ENDERECO?></p>
 
-		<div class="columns is-vcentered is-mobile is-multiline xmt60 xmt60-mobile">
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3556.3246567314304!2d-48.6307507!3d-26.956616399999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8c98e659a248d%3A0xeccb1c0a4c66c221!2sAv.%20Carlos%20Drummond%20de%20Andrade%2C%20111%20-%20Praia%20dos%20Amores%2C%20Itaja%C3%AD%20-%20SC%2C%2088306-830!5e0!3m2!1spt-BR!2sbr!4v1764793267360!5m2!1spt-BR!2sbr"
+                width="100%" height="840" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-			<div class="column is-6 has-text-centered">
-				<img src="<?=IMG?>angatu-logo-light.svg" alt="angatu logo" class="logo waypoint animation_left">
-			</div>
+        <?php
+            $distances = [
+                [
+                    'title' => 'Supermercado Tem Tem',
+                    'distancia' => '5km',
+                ],
+                [
+                    'title' => 'Hospital',
+                    'distancia' => '3km',
+                ],
+                [
+                    'title' => 'Brava Mall Shopping',
+                    'distancia' => '2km',
+                ],
+                [
+                    'title' => 'Escola Municipal',
+                    'distancia' => '1,5km',
+                ],
+                [
+                    'title' => 'Farmácia São João',
+                    'distancia' => '1km',
+                ],
+                [
+                    'title' => 'Balneário Camboriú',
+                    'distancia' => '8km',
+                ],
+            ]
+        ?>
 
-			<div class="column is-5-tablet is-12-mobile">
-				<h2 class="color-gray-light waypoint animation_left">
-					EMPREENDIMENTOS<br>
-					QUE INSPIRAM SONHOS
-				</h2>
-
-				<p class="mt40 has-text-weight-light waypoint animation_left">
-					Para a Angatu, a qualidade é um objetivo e um compromisso. Cada empreendimento é concebido com meticulosa paixão, para isso são utilizadas tecnologia de ponta, sem nunca perder de vista a beleza natural que cerca seus empreendimentos.
-					<br><br>
-					Seu propósito é oferecer uma experiência única aos clientes, sendo eles pessoas que buscam muito mais que um simples local na praia ou em meio à natureza. Projetando cuidadosamente, para proporcionar momentos incríveis e memórias para a vida toda.
-				</p>
-			</div>
-
-		</div>
-
-
-	</div>
+        <div class="distances-block">
+            <?php foreach($distances as $distance): ?>
+                <div>
+                    <p><?=$distance['title']?></p>
+                    <hr>
+                    <p><?=$distance['distancia']?></p>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
 </section>
-
-
-<div class="section-rodape"></div>
 
 
 <?php get_footer(); ?>

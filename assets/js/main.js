@@ -207,9 +207,43 @@ jQuery(document).ready(function($)
 		});
 	});
 
+	$('.carrousel-1').each(function(){
 
+		var $owl = $(this);
 
-	
+		$owl.owlCarousel({
+			autoplay: false,
+			loop: false,
+			margin: 80,
+			dots: true,
+			nav: true,
+			smartSpeed: 800,
+			navText: [
+				'<img src="' + HTTP + '/assets/img/icons/arrow-left.svg" alt="Item anterior">',
+				'<img src="' + HTTP + '/assets/img/icons/arrow-right.svg" alt="Próximo item">'
+			],
+			responsive: {
+				0:   { items: 1 },
+				578: { items: 1 },
+				1024:{ items: 1 }
+			},
+
+			onInitialized: function(event){
+				var carousel = event.relatedTarget;
+				var $dots = $owl.find('.owl-dots .owl-dot');
+
+				$dots.each(function(index){
+					var $slide = $(carousel.$stage.children().get(index)).find('.item');
+					var title = $slide.data('title') || ('Slide ' + (index+1));
+
+					$(this)
+						.addClass('btn')
+						.html('<span>' + title + '</span>');
+				});
+			}
+		});
+
+	});
 
 
 
@@ -258,23 +292,16 @@ jQuery(document).ready(function($)
 		return false;
 	});
 
+	const sectionMapa = document.querySelector('section.mapa .map-container');
+
+	sectionMapa.addEventListener('click', (e)=>{
+		const iframe = e.currentTarget.querySelector('iframe');
+		iframe.style.pointerEvents = 'all';
+
+	})
+
+
 });
-
-
-// function debounce(func, wait, immediate) {
-//     var timeout;
-//     return function() {
-//         var context = this, args = arguments;
-//         var later = function() {
-//             timeout = null;
-//             if (!immediate) func.apply(context, args);
-//         };
-//         var callNow = immediate && !timeout;
-//         clearTimeout(timeout);
-//         timeout = setTimeout(later, wait);
-//         if (callNow) func.apply(context, args);
-//     };
-// }
 
 
 

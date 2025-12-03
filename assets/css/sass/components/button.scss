@@ -15,7 +15,7 @@ button, .button {
 
 .btn {
   position: relative;
-  background: $primary-color;
+  background: $bege-color;
   border: 1px solid $primary-color;
   border-radius: 30px;
   display: inline-block;
@@ -27,7 +27,7 @@ button, .button {
   // width: 400px;
   max-width: 100%;
   outline: none;
-  font-family: 'IBM Plex Sans';
+  font-family: $primary-font;
   overflow: hidden;
   // letter-spacing: 1px;
   @include text($color: #FFF, $size: 1.6em, $lh: 1.4, $weight: 400, $align: center);
@@ -39,7 +39,7 @@ button, .button {
 
   &:after {
     content: '';
-    background: $dark-color;
+    background: $ocre-escuro;
     @include size(100%, 0);
     @include absolute($t: 0, $l: 0%, $z: 0);
     @include transition(0.5s);
@@ -49,7 +49,6 @@ button, .button {
 
   &:hover {
     color: #FFF;
-    border-color: $dark-color;
 
     &:after {
       height: 100%;

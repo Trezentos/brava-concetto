@@ -29,24 +29,6 @@ $arMenu = [
 	],
 
 
-	'Casas' => [
-		'show' 		=> true,
-		'icon' 		=> 'home',
-		'access'  	=> 8,
-		'file' 		=> 'list/casas.php',
-		'submenu' 	=> NULL
-	],
-
-
-	'Tenho Interesse' => [
-		'show' 		=> true,
-		'icon' 		=> 'address-card-o',
-		'access'  	=> 16,
-		'file' 		=> 'list/trabalhe-conosco.php',
-		'submenu' 	=> NULL
-	],
-
-
 	'Galeria de Imagens' => [
 		'show' 		=> true,
 		'icon' 		=> 'picture-o',
@@ -56,19 +38,11 @@ $arMenu = [
 	],
 
 
-	'Andamento das Obras' => [
-		'show' 		=> true,
-		'icon' 		=> 'building-o',
-		'access'  	=> 7,
-		'file' 		=> 'form/obras.php',
-		'submenu' 	=> NULL
-	],
-
     'Plantas' => [
         'show' 		=> true,
         'icon' 		=> 'building-o',
         'access'  	=> 9,
-        'file' 		=> 'form/obras.php',
+        'file' 		=> 'list/plantas.php',
         'submenu' 	=> NULL
     ],
 
@@ -153,14 +127,13 @@ $LIST_ACCESS_FILE = [
 
 	7 => ['form/obras.php'],
 
-	8 => [
-		'list/casas.php',
-		'form/casas.php',
-	],
+
 
 	9 => [
 		'list/plantas.php',
 		'form/plantas.php',
+		'list/plantas-imagens.php',
+		'form/plantas-imagens.php',
 	],
 	
 ];

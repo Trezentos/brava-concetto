@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  font: 62.5% $font-primary, sans-serif;
+  font: 62.5% $primary-font, sans-serif;
   font-weight: 400;
   color: $root-color;
   background: $white-color-1;
@@ -21,6 +21,10 @@ img { display: block; }
   margin: 0 auto;
   padding: 0 15px;
 
+  &.smaller {
+    max-width: 1416px;
+  }
+
   &.compact {
     max-width: 1000px;
   }
@@ -28,6 +32,7 @@ img { display: block; }
   &.wide {
     max-width: 1470px;
   }
+
 
   &.super-wide-header {
     max-width: 1890px;

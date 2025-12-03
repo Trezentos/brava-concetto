@@ -13,7 +13,10 @@ $(document).ready(function(){
 				input.val(index + 1);
 				scripts.push(input.attr('id') + '=' + (index + 1));
 			});
-			
+
+			console.log(scripts)
+			console.log(tabela)
+
 			$.post(HTTP_GESTOR + 'ajax/ajax-save-order.php', {data:scripts, tabela: tabela}, function(rtn){
 
 				showNotify('Ordenação realizada com sucesso!');

@@ -905,13 +905,82 @@ function htmlLog(){
     echo $_html;
 }
 
+function pretty_dump($data, $level = 0, &$visited = [])
+{
+    $indent = str_repeat("    ", $level); // 4 spaces
+    $type = gettype($data);
 
+    // Impede loop infinito (referências circulares)
+    if (is_object($data) || is_array($data)) {
+        $hash = md5(serialize($data));
+        if (isset($visited[$hash])) {
+            echo $indent . "↳ *RECURSÃO DETECTADA*\n";
+            return;
+        }
+        $visited[$hash] = true;
+    }
 
+    switch ($type) {
 
+        // -------------------------------------
+        // TIPOS ESCALARES
+        // -------------------------------------
+        case 'string':
+            echo $indent . "string(" . strlen($data) . ") \"{$data}\"\n";
+            break;
 
-/*
-|--------------------------------------------------------------------------
-| SPECIFIC FUNCTIONS FOR 'CLIENTE'
-|--------------------------------------------------------------------------
-|
-*/
+        case 'integer':
+        case 'double':
+        case 'boolean':
+            echo $indent . "{$type}(" . var_export($data, true) . ")\n";
+            break;
+
+        case 'NULL':
+            echo $indent . "NULL\n";
+            break;
+
+        // -------------------------------------
+        // ARRAY
+        // -------------------------------------
+        case 'array':
+            echo $indent . "array(" . count($data) . ") [\n";
+
+            foreach ($data as $key => $value) {
+                echo $indent . "    [{$key}] =>\n";
+                pretty_dump($value, $level + 2, $visited);
+            }
+
+            echo $indent . "]\n";
+            break;
+
+        // -------------------------------------
+        // OBJETO
+        // -------------------------------------
+        case 'object':
+            $class = get_class($data);
+            echo $indent . "object({$class}) {\n";
+
+            $reflection = new ReflectionObject($data);
+            $properties = $reflection->getProperties();
+
+            foreach ($properties as $prop) {
+                $prop->setAccessible(true);
+
+                $visibility = implode(' ', Reflection::getModifierNames($prop->getModifiers()));
+                $name = $prop->getName();
+                $value = $prop->getValue($data);
+
+                echo $indent . "    {$visibility} \${$name} =>\n";
+                pretty_dump($value, $level + 2, $visited);
+            }
+
+            echo $indent . "}\n";
+            break;
+
+        // -------------------------------------
+        // DEFAULT
+        // -------------------------------------
+        default:
+            echo $indent . "{$type}\n";
+    }
+}

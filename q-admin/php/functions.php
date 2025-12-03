@@ -323,14 +323,14 @@ function btn_edit_item($id_pai, $id_item, $page, $id_avo=null){
 
 function btn_back_item($id_pai, $page, $tab=null, $id_avo=null){
 
-	$param = [];
+    $param = [];
 
-	if($tab) 	$param[] = 'tab='.$tab;
-	if($id_avo) $param[] = 'id_pai='.$id_avo;
+    if($tab) 	$param[] = 'tab='.$tab;
+    if($id_avo) $param[] = 'id_pai='.$id_avo;
 
-	$url = implode('&', $param); 
+    $url = implode('&', $param);
 
-	echo '<a class="btn btn-sm btn-default" href="'.HTTP_GESTOR.'form/'.$page.'?id='.$id_pai.'&'.$url.'"><span class="fa fa-chevron-left"></span> Voltar</a>';
+    echo '<a class="btn btn-sm btn-default" href="'.HTTP_GESTOR.'form/'.$page.'?id='.$id_pai.'&'.$url.'"><span class="fa fa-chevron-left"></span> Voltar</a>';
 }
 
 function btn_delete_item($id_pai, $id_item, $param, $tab=null, $id_avo=null){
@@ -370,15 +370,18 @@ function deleteImg($id, $TABLE, $field, $ROOT=ROOT_UPLOADS_IMG){
 	{
 		// DELETE FILE MAIN
 		@unlink($ROOT.$IMG);
+        @unlink($ROOT.'lg-'.$IMG);
 
 		$IMG_JPG = str_replace('webp', 'jpg', $IMG);
 		$IMG_PNG = str_replace('webp', 'png', $IMG);
 
 		// DELETE FILE JPG EXTRA
 		@unlink($ROOT.$IMG_JPG);
+		@unlink($ROOT.'lg-'.$IMG_JPG);
 
 		// DELETE FILE PNG EXTRA
 		@unlink($ROOT.$IMG_PNG);
+		@unlink($ROOT.'lg-'.$IMG_PNG);
 	}
 }
 
@@ -522,6 +525,7 @@ function get_emp_cat($selected=NULL, $retorno='value')
 	}
 	return implode("\n",$_html);
 }
+
 
 
 # LINHDAS DE PRODUTO

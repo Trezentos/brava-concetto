@@ -107,7 +107,7 @@
           }
 
           p {
-            font-family: $font-secondary;
+            font-family: $secondary-font;
             font-size: 24px;
           }
 
@@ -302,6 +302,10 @@
 }
 
 section.section-plantas {
+  p { font-size: 22px;}
+
+  h2 { font-weight: 500; }
+
   .selo-container {
     display: flex;
     justify-content: center;
@@ -314,13 +318,67 @@ section.section-plantas {
       height: 164px;
     }
 
-    p { font-size: 22px; }
-
-    h2 { font-weight: 500; }
-
     hr {
       height: 3px;
       background: $root-color;
+    }
+  }
+}
+
+section.mapa {
+  margin-top: 100px;
+
+  h3 , p {
+    text-align: center;
+  }
+
+  h3 {
+    font-weight: 500;
+    font-size: 33px;
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 18px;
+    max-width: 374px;
+    margin: 0 auto;
+  }
+
+  .map-container {
+
+    iframe {
+      pointer-events: none;
+      display: block;
+    }
+
+
+    .distances-block {
+      background: $ocre-escuro;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 848px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 35px 54px;
+
+      div {
+        display: flex;
+        gap: 11px;
+        max-width: 312px;
+        width: 100%;
+        color: #fff;
+
+        hr {
+          background: #fff;
+          flex: 1;
+        }
+
+        p {
+          font-size: 14px;
+          font-weight: 500;
+          text-align: left;
+        }
+      }
     }
   }
 }
