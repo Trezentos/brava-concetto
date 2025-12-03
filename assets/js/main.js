@@ -146,62 +146,6 @@ jQuery(document).ready(function($)
 	});
 
 
-	$('.slide-galeria').owlCarousel({
-		autoplayTimeout: 0,
-		dots: false,
-		nav: true,
-		smartSpeed: 1100,
-		navText: [
-			'<img src="'+HTTP+'/assets/img/icons/arrow-left.svg"  alt="">',
-			'<img src="'+HTTP+'/assets/img/icons/arrow-right.svg" alt="">'
-		],
-		responsive: {
-			0: {
-				autoWidth: false,
-				margin: 40,
-				items: 1,
-			},
-			768: {
-				margin: 224,
-				autoWidth: true,
-				items: 2,
-			}
-		}
-	});
-
-
-
-	$('.slide-casas').owlCarousel({
-		autoplay: true,
-		autoplayTimeout: 6000,
-		margin: 0,
-		dots: false,
-		nav: true,
-		items: 1,
-		animateOut: 'fadeOut',
-		smartSpeed: 1100,
-		navText: [
-			'<img src="'+HTTP+'/assets/img/icons/arrow-left.svg"  alt="">',
-			'<img src="'+HTTP+'/assets/img/icons/arrow-right.svg" alt="">'
-		],
-	});
-
-
-
-	$('.slide-obras').owlCarousel({
-		autoplayTimeout: 0,
-		margin: 0,
-		dots: false,
-		nav: true,
-		items: 1,
-		smartSpeed: 800,
-		navText: [
-			'<img src="'+HTTP+'/assets/img/icons/arrow-left.svg"  alt="">',
-			'<img src="'+HTTP+'/assets/img/icons/arrow-right.svg" alt="">'
-		],
-	});
-
-
 
 
 	$('#area-construida-1 .item').mouseenter(function(e)

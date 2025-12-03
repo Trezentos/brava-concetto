@@ -64,8 +64,15 @@ $arMenu = [
 		'submenu' 	=> NULL
 	],
 
+    'Plantas' => [
+        'show' 		=> true,
+        'icon' 		=> 'building-o',
+        'access'  	=> 9,
+        'file' 		=> 'form/obras.php',
+        'submenu' 	=> NULL
+    ],
 
-	'Usuários' => [
+    'Usuários' => [
 		'show' 		=> true,
 		'icon' 		=> 'user-o',
 		'access'  	=> 3,
@@ -128,7 +135,13 @@ $LIST_ACCESS_FILE = [
 		'form/usuarios.php'
 	],
 
-	5  => [
+    4  => [
+        'list/plantas.php',
+        'form/plantas.php',
+    ],
+
+
+    5  => [
 		'list/galeria.php',
 		'form/galeria.php',
 	],
@@ -143,6 +156,11 @@ $LIST_ACCESS_FILE = [
 	8 => [
 		'list/casas.php',
 		'form/casas.php',
+	],
+
+	9 => [
+		'list/plantas.php',
+		'form/plantas.php',
 	],
 	
 ];

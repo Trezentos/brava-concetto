@@ -1,0 +1,267 @@
+// =======================
+// Variáveis globais Swiper
+// =======================
+
+
+
+// =======================
+// Section – Carrossel
+// =======================
+.section-carousel {
+
+  margin-top: -130px;
+
+  hr { transform-origin: left; }
+
+  padding-bottom: 160px;
+
+  .wrap {
+    padding-top: 130px;
+    height: 870px;
+    position: relative;
+
+    .paper-background {
+      position: absolute;
+      top: 0;
+      left: 15px;
+      max-width: unset;
+      height: 100%;
+      z-index: -1;
+    }
+  }
+
+  h2 {
+    color: $ocre-escuro;
+    font-size: 33px;
+    font-weight: 500;
+  }
+
+  hr {
+    background: $ocre-escuro;
+    margin-top: 0;
+    height: 3px;
+    margin-bottom: 85px;
+  }
+
+  .title-container {
+    display: grid;
+    grid-template-columns: 523fr 971fr;
+
+    .content {
+      display: flex;
+      justify-content: center;
+
+      div {
+        max-width: 742px;
+        width: 100%;
+      }
+    }
+  }
+
+  // Ajuste de posicionamento do wrapper do Swiper
+  .swiper-wrapper {
+    position: relative;
+    left: -212px;
+  }
+
+  // =======================
+  // Swiper – Carrossel de Imóveis
+  // =======================
+  .swiper.slide-imoveis {
+    overflow: visible;
+    height: 500px;
+
+    // Navegação (botões próximo/anterior)
+    .outer-next,
+    .outer-prev {
+      @include size(40px);
+      border-radius: var(--radius-sm);
+      background-color: $d-gray;
+      transition: all 0.2s linear;
+    }
+
+    .outer-prev {
+      left: initial;
+      right: 210px;
+    }
+
+    .outer-next {
+      right: 158px;
+    }
+
+    // Slide padrão
+    .swiper-slide {
+      position: relative;
+      width: 416px;
+      height: 416px;
+      transition: width 0.4s, height 0.4s, margin-top 0.4s;
+
+      h2 {
+        position: absolute;
+        top: -95px;
+        opacity: 0;
+        transition: 0.4s;
+        margin-bottom: 0;
+      }
+
+      figure.image-container {
+        background: $secondary-color;
+        display: block;
+        position: relative;
+        overflow: hidden;
+        outline: none !important;
+
+        img {
+          display: block;
+          aspect-ratio: 1 / 1;
+          width: 100%;
+          object-fit: cover;
+          cursor: grab;
+          transition: 0.4s;
+        }
+
+
+        .expand-icon {
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+          width: 26px;
+          height: 26px;
+          opacity: 0;
+        }
+
+
+      }
+
+      a { outline: none; }
+
+
+
+    }
+
+
+    .swiper-slide {
+      position: relative;
+      margin-top: 45px;
+    }
+    // Slide imediatamente após o .swiper-slide-next
+    .swiper-slide-next + .swiper-slide {
+      margin-top: 0;
+      width: 500px;
+      height: 500px;
+
+      figure.image-container .expand-icon {
+        opacity: 1 !important;
+      }
+
+      h2 {
+        opacity: 1;
+      }
+    }
+
+    // Scrollbar
+    .swiper-horizontal > .swiper-scrollbar,
+    .swiper-scrollbar.swiper-scrollbar-horizontal {
+      left: unset;
+      right: 50%;
+      transform: translateX(50%);
+      max-width: 1280px;
+      width: 100%;
+    }
+
+    .swiper-scrollbar-drag {
+
+    }
+
+    // Botão “ver todos”
+    .btn-all {
+      @include absolute($b: -110px, $r: 12px);
+    }
+
+    .btn {
+      background: $secondary-color;
+      padding: 16px 84px;
+    }
+  }
+}
+:root {
+  --swiper-navigation-color: #FFF;
+  --swiper-scrollbar-bottom: 35px;
+  --swiper-scrollbar-sides-offset: 12%;
+  --swiper-scrollbar-drag-bg-color: #{$ocre-escuro};
+
+  /* Fundo do trilho */
+  --swiper-scrollbar-size: 3px;
+
+  --swiper-scrollbar-bg-color: #{$white-color-1};
+  --radius-sm: 3px;
+}
+
+/* Altura do DRAG (o botão) */
+.swiper-scrollbar-drag {
+  height: 7px !important;
+  top: -2px !important;
+  cursor: grab;
+}
+
+// =======================
+// Ajustes do Swiper – Navegação
+// =======================
+.slide-imoveis {
+  --swiper-navigation-size: 20px;
+  --swiper-navigation-bottom-offset: -100px;
+  --swiper-navigation-top-offset: unset;
+  --swiper-scrollbar-bottom: -65px;
+  bottom: 15px !important;
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    bottom: 15px !important;
+    top: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black !important;
+    border-radius: 10px;
+
+    img {
+      width: 16px;
+      height: 18px;
+    }
+  }
+}
+
+
+// =======================
+// Card de imóvel (reservado)
+// =======================
+.card-imovel {
+  // --swiper-navigation-top-offset: calc(50% - 10px);
+}
+
+
+// =======================
+// Slide com efeito WestSlide (outro componente)
+// =======================
+.slide {
+  padding: 0 120px;
+  height: 370px;
+
+  &:before,
+  &:after {
+    content: '';
+    @include absolute($t: 0, $l: 0, $z: 1);
+    @include size(100%, 50px);
+    background-image: linear-gradient(to bottom, #FFF, rgba(#FFF, 0));
+  }
+
+  &:after {
+    top: initial;
+    bottom: 0;
+    background-image: linear-gradient(to top, #FFF, rgba(#FFF, 0));
+  }
+
+  .west-stage {
+    margin-top: 40px;
+  }
+}

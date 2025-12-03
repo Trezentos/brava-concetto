@@ -101,7 +101,7 @@ $pg = $_SEO["permalink"];
 <body id="topo">
 
 
-	<header id="topo" class="xwaypoint xanimation_top">
+	<header id="topo" class="xwaypoint xanimation_top" style="opacity: 0">
 		<div class="wrap super-wide-header">
 
 			<nav class="is-relative" role="navigation" aria-label="main navigation">
