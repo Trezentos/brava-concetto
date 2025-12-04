@@ -8,7 +8,6 @@
 // Section – Carrossel
 // =======================
 .section-carousel {
-
   margin-top: -130px;
 
   hr { transform-origin: left; }
@@ -17,15 +16,14 @@
 
   .wrap {
     padding-top: 130px;
-    height: 870px;
     position: relative;
+    //max-width: 1310px;
 
     .paper-background {
       position: absolute;
       top: 0;
       left: 15px;
       max-width: unset;
-      height: 100%;
       z-index: -1;
     }
   }
@@ -40,7 +38,8 @@
     background: $ocre-escuro;
     margin-top: 0;
     height: 3px;
-    margin-bottom: 85px;
+
+    margin-bottom: 35px;
   }
 
   .title-container {
@@ -61,7 +60,6 @@
   // Ajuste de posicionamento do wrapper do Swiper
   .swiper-wrapper {
     position: relative;
-    left: -212px;
   }
 
   // =======================
@@ -69,7 +67,8 @@
   // =======================
   .swiper.slide-imoveis {
     overflow: visible;
-    height: 500px;
+    max-width: 1280px;
+    margin: 0 auto;
 
     // Navegação (botões próximo/anterior)
     .outer-next,
@@ -92,16 +91,20 @@
     // Slide padrão
     .swiper-slide {
       position: relative;
-      width: 416px;
-      height: 416px;
       transition: width 0.4s, height 0.4s, margin-top 0.4s;
+      width: 100%;
 
       h2 {
         position: absolute;
-        top: -95px;
+        top: -90px;
+        left: 544px;
         opacity: 0;
         transition: 0.4s;
         margin-bottom: 0;
+      }
+
+      &.swiper-slide-active h2 {
+        opacity: 1;
       }
 
       figure.image-container {
@@ -113,11 +116,12 @@
 
         img {
           display: block;
-          aspect-ratio: 1 / 1;
-          width: 100%;
           object-fit: cover;
           cursor: grab;
           transition: 0.4s;
+
+          width: 100%;
+
         }
 
 
@@ -144,20 +148,6 @@
       position: relative;
       margin-top: 45px;
     }
-    // Slide imediatamente após o .swiper-slide-next
-    .swiper-slide-next + .swiper-slide {
-      margin-top: 0;
-      width: 500px;
-      height: 500px;
-
-      figure.image-container .expand-icon {
-        opacity: 1 !important;
-      }
-
-      h2 {
-        opacity: 1;
-      }
-    }
 
     // Scrollbar
     .swiper-horizontal > .swiper-scrollbar,
@@ -165,7 +155,6 @@
       left: unset;
       right: 50%;
       transform: translateX(50%);
-      max-width: 1280px;
       width: 100%;
     }
 
@@ -245,7 +234,7 @@
 // =======================
 .slide {
   padding: 0 120px;
-  height: 370px;
+  //height: 370px;
 
   &:before,
   &:after {

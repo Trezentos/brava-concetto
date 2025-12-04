@@ -1,28 +1,62 @@
 <?php
 $pg = $_SEO["permalink"];
+
+$pages = [
+    [
+        'text' => 'início',
+        'link' => 'inicio',
+    ],
+    [
+        'text' => 'apresentação',
+        'link' => 'apresentacao',
+    ],
+    [
+        'text' => 'detalhes',
+        'link' => 'detalhes',
+    ],
+    [
+        'text' => 'galeria',
+        'link' => 'galeria',
+    ],
+    [
+        'text' => 'plantas',
+        'link' => 'plantas',
+    ],
+    [
+        'text' => 'localizacao',
+        'link' => 'localização',
+    ],
+    [
+        'text' => 'fale conosco',
+        'link' => 'fale-conosco',
+    ]
+]
+
 ?>
 
-			<footer class="bg-root is-relative has-text-right">
+			<footer class="bg-white is-relative has-text-right pt60 pb25">
 				<div class="wrap">
+                    <div class="content-footer">
+                        <img src="<?=IMG.'brava-concetto-logo-escuro.svg'?>" class="" alt="">
 
-					<div class="columns">
-						<div class="column is-2 is-hidden-mobile"></div>
-						<div class="column is-10">
-							<p class="mt20 waypoint animation_right color-secondary">Incorporação objeto do protocolo no 13.8709 do Ofício de Registro de Imóveis de São Sebastião/SP</p>
+                        <p class="mt45 mb45 address"><?=ENDERECO?></p>
 
-							<p class="mt10 color-primary waypoint animation_right_d1"><small>Conforme a Lei Federal no 4.591/64, o empreendimento somente será oferecido à venda e comercializado após o devido Registro da Incorporação no Cartório de Registro de Imóveis da Comarca, não havendo responsabilidade alguma da Construtora por anúncios de terceiros. As Imagens são meramente ilustrativas, assim como o mobiliário constante nas referidas imagens, não sendo parte integrante do imóvel, mas respeitando sempre seu memorial descritivo.</small></p>
-						</div>
-					</div>
+                        <ul>
+                            <?php foreach($pages as $page): ?>
+                                <li>
+                                    <a href="#<?=HTTP.$page['link']?>"><p><?=$page['text']?></p></a>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
 
+                        <div class="redes-container mt70">
+                            <?php include TEMPLATE.'sections/redes-sociais.php' ?>
+                        </div>
 
+                        <img src="<?=IMG.'icons/clarus-logo.svg'?>" class="mt50 mb40" alt="">
 
-
-					<div class="assinatura font-primary mt20">
-						<a class="mr5" href="https://quax.com.br" target="_blank">QUAX</a>
-						+
-						<a class="ml5" href="https://mosimanndesign.com.br/" target="_blank">MOSIMANN DESIGN</a>
-					</div>
-
+                        <p>© 2025 Clarus - Todos os direitos reservados</p>
+                    </div>
 				</div>
 			</footer>
 

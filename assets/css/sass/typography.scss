@@ -2,9 +2,11 @@
 
 $primary-font: 'Work Sans';
 $secondary-font: 'athena';
+$tertiary-font: 'Inter';
 
 .font-primary {  font-family: $primary-font, sans-serif !important; }
 .font-secondary { font-family: $secondary-font, sans-serif !important;  }
+.font-tertiary { font-family: $tertiary-font, sans-serif !important;  }
 
 
 a {
@@ -71,6 +73,16 @@ p {
   font-size: 1.6em;
   font-weight: 500;
   letter-spacing: 0;
+
+  &.bigger {
+    font-size: 17px;
+  }
+
+  &.big {
+    font-size: 24px;
+  }
+
+
 }
 
 h4 {

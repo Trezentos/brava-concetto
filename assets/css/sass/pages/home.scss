@@ -339,7 +339,6 @@ section.mapa {
 
   p {
     font-weight: 500;
-    font-size: 18px;
     max-width: 374px;
     margin: 0 auto;
   }
@@ -353,13 +352,16 @@ section.mapa {
 
 
     .distances-block {
-      background: $ocre-escuro;
+      background: $root-color;
       display: grid;
       grid-template-columns: 1fr 1fr;
       max-width: 848px;
       width: 100%;
       margin: 0 auto;
-      padding: 35px 54px;
+      padding: 40px 54px 27px;
+      gap: 10px 120px;
+      position: relative;
+      top: -80px;
 
       div {
         display: flex;
@@ -375,12 +377,75 @@ section.mapa {
 
         p {
           font-size: 14px;
-          font-weight: 500;
+          font-weight: 400;
           text-align: left;
+          color: white;
+        }
+      }
+
+    }
+  }
+
+
+  .form-block {
+    width: 100%;
+    max-width: 1280px;
+    background: $root-color;
+    margin: 0 auto;
+    padding: 60px 162px;
+
+    p {
+      color: white;
+      max-width: 491px;
+
+      &.bigger {
+        margin-top: 18px;
+      }
+    }
+
+
+    form {
+      .row {
+        display: flex;
+        gap: 16px;
+        margin-top: 47px;
+
+      }
+
+
+
+      label.checkbox {
+        gap: 9px;
+
+        span:hover {
+          color: white;
+        }
+
+        span { color: white !important; }
+      }
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: flex-end;
+
+      .btn {
+        margin: 0;
+        background: $white-color-1;
+        width: 225px;
+
+        span {
+          color: $root-color;
+        }
+
+
+        &:hover {
+          span { color: $white-color-1; }
         }
       }
     }
   }
+
 }
 
 .section-rodape {

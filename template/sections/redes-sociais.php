@@ -1,3 +1,4 @@
+
 <div class="redes-sociais">
 	<a href="<?=LINK_WHATSAPP?>" 	target="_blank" title="WhatsApp"><i class="fa fa-whatsapp"></i></a>
 	<?php if(INSTAGRAM){ ?><a href="<?=INSTAGRAM?>"  	target="_blank" title="Instagram"><img src="<?=IMG.'icons/instagram.svg'?>" class="" alt=""></a><?php } ?>

@@ -51,8 +51,8 @@ if (isset($_FILES['file']) && $_FILES['file']['error'] == 0)
 		switch ($categoria)
 		{
 			case 'galeria' :
-				$wTb  = 500;
-				$hTb  = 500;
+				$wTb  = 1280;
+				$hTb  = 720;
 
 				$wMd  = 1920;
 				$hMd  = 760;

@@ -45,14 +45,14 @@ if(LOCALHOST) {
 	define('AUTO_RELOAD',true);
 	// define('AUTO_RELOAD',false);
 } else {
-	define('DB_USER','arampraiadabalei_site');
-	define('DB_NAME','arampraiadabalei_site');
-	define('DB_PASS','hc7Wlj8EDd7G');
+	define('DB_USER','quaxxcom_padrao');
+	define('DB_NAME','quaxxcom_brava-concetto');
+	define('DB_PASS','XHMfhXq=GIx');
 	define('DB_HOST','localhost');
 	define('PREFIX','adm_');
-	define('ROOT',$_SERVER['DOCUMENT_ROOT']);
-	define('HTTP','https://'.$_SERVER['HTTP_HOST']);
-	define('SHIFT_NUM', 0);
+    define('ROOT',$_SERVER['DOCUMENT_ROOT'].'/clientes/brava-concetto');
+    define('HTTP','https://'.$_SERVER['HTTP_HOST'].'/clientes/brava-concetto');
+    define('SHIFT_NUM', 2);
 
 	define('AUTO_RELOAD',false);
 }

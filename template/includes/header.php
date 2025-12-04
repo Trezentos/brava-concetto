@@ -34,7 +34,7 @@ $pg = $_SEO["permalink"];
 		<!-- FONTS -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="https://use.typekit.net/iab8qoz.css">
 
@@ -101,7 +101,7 @@ $pg = $_SEO["permalink"];
 <body id="topo">
 
 
-	<header id="topo" class="xwaypoint xanimation_top" style="opacity: 0; pointer-events: none;">
+	<header id="topo" class="xwaypoint xanimation_top is-invisible" >
 		<div class="wrap super-wide-header">
 
 			<nav class="is-relative" role="navigation" aria-label="main navigation">

@@ -69,8 +69,6 @@ get_header();
 <!--    </div>-->
 <!--</section>-->
 
-<?php if(false): ?>
-
 
 
     <div
@@ -182,7 +180,6 @@ get_header();
     </div>
 </section>
 
-
 <?php
 
     $caracteristicas = [
@@ -199,8 +196,6 @@ get_header();
 ?>
 <section class="section-caracteristicas pt60 pb0"  id="localizacao">
 	<div class="wrap">
-
-
 
         <div class="content">
             <div class="left">
@@ -229,9 +224,9 @@ get_header();
 </section>
 
 
-<section class="section-carousel pt0 pb0 is-relative pt80-mobile pb80-mobile pt100-notebook pb50-notebook pt100-tablet">
+<section class="section-carousel pt0 pb0 is-relative pt80-mobile pb80-mobile pt100-notebook pb50-notebook pt100-tablet ">
     <div class="wrap">
-        <img src="<?=IMG.'paper-background-extended.webp'?>" class="paper-background waypoint animation_bottom_d1" alt="">
+        <img src="<?=IMG.'paper-background-carousel.png'?>" class="paper-background waypoint animation_bottom_d1" alt="">
 
         <div class="title-container ">
             <div></div>
@@ -244,7 +239,6 @@ get_header();
         </div>
 
         <div class="swiper slide-imoveis swiper-imoveis mt40 mb90 mb0-tablet mb10-mobile waypoint animation_bottom">
-
             <div class="swiper-wrapper">
                 <?php foreach ($qGaleria1 as $card): ?>
                     <div class="swiper-slide" data-title="<?= $card->legenda; ?>">
@@ -302,8 +296,50 @@ get_header();
         <?php include TEMPLATE.'includes/slide-component.php'; ?>
     </div>
 </section>
-<?php endif; ?>
 
+<section class="section-carousel pt0 pb0 is-relative pt80-mobile pb80-mobile pt100-notebook pb50-notebook pt100-tablet">
+    <div class="wrap">
+        <img src="<?=IMG.'paper-background-extended.webp'?>" class="paper-background waypoint animation_bottom_d1" alt="">
+
+        <div class="title-container ">
+            <div></div>
+            <div class="content ">
+                <div class=" pl13">
+                    <hr class="waypoint animation_elastic_d1">
+                    <!--                    <h2 class="waypoint animation_bottom">área de lazer</h2>-->
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper slide-imoveis swiper-imoveis mt40 mb90 mb0-tablet mb10-mobile waypoint animation_bottom">
+
+            <div class="swiper-wrapper">
+                <?php foreach ($qGaleria2 as $card): ?>
+                    <div class="swiper-slide" data-title="<?= $card->legenda; ?>">
+                        <a
+                                href="<?=  HTTP_UPLOADS_IMG.'lg-'.$card->arquivo; ?>"
+                                data-fancybox="galeria-1"
+                                data-caption="<?= $card->legenda; ?>"
+                                class=""
+                        >
+                            <h2><?= $card->legenda; ?></h2>
+                            <figure class="image-container">
+                                <img
+                                        src="<?= HTTP_UPLOADS_IMG.'tb-'.$card->arquivo;; ?>"
+                                        alt="<?= 'Titulo: '.$card->legenda; ?>"
+                                >
+                                <img src="<?=IMG.'icons/expand.svg'?>" class="expand-icon" alt="">
+                            </figure>
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
+            <div class="swiper-scrollbar"></div>
+        </div>
+
+    </div>
+</section>
 
 <section class="mapa">
     <h3>Mais que uma localização, uma escolha de vida</h3>
@@ -351,6 +387,48 @@ get_header();
                 </div>
             <?php endforeach; ?>
         </div>
+    </div>
+
+
+    <div class="form-block">
+        <p class="big">
+            Fale conosco
+        </p>
+
+        <p class="bigger">
+            Preencha o formulário e um de nossos consultores
+            entrará em contato para esclarecer todas as suas dúvidas.
+        </p>
+
+        <form id="form-contato" action="" method="post">
+
+            <div class="row">
+                <input type="text" name="nome" class="input" placeholder="Nome completo" required />
+
+                <input type="text" name="telefone" class="input" placeholder="Telefone / Whatsapp" required />
+
+                <input type="email" name="email" class="input" placeholder="E-mail" required />
+            </div>
+
+            <textarea name="mensagem" class="input" placeholder="Mensagem" required></textarea>
+
+            <div class="checkbox-group mt20">
+                <label class="checkbox">
+                    <input type="checkbox" class="checkbox" name="aceite_politica" required>
+                    <span class="font-tertiary">Declaro que li e aceito os termos da <span>Política de Privacidade</span>.</span>
+                </label>
+
+                <label class="checkbox mt10">
+                    <input type="checkbox" class="checkbox" name="aceite_contato" required>
+                    <span class="font-tertiary">Estou de acordo em receber comunicações e ser acessado para possível atendimento.</span>
+                </label>
+            </div>
+
+            <div class="mt20 button-container">
+                <button class="btn" type="submit" name="submit"><span class="font-secondary">ENVIAR</span></button>
+            </div>
+
+        </form>
     </div>
 </section>
 

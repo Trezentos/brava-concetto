@@ -5,7 +5,7 @@ jQuery(document).ready(function($) {
     });
 
     const swiper = new Swiper(".swiper-imoveis", {
-        slidesPerView: "auto",
+        slidesPerView: 1,
         spaceBetween: 16,
         speed: 1000,
         observer: true,
