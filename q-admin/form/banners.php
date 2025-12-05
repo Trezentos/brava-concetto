@@ -97,7 +97,7 @@ get_barra_header();
 				<div class="well">
 					<?php
 					$imgUpload = new ImageUploadComponent('imagem_mobile', 'Imagem Mobile', $q->imagem_mobile);
-					$imgUpload->setObs('A imagem deve ter 540x990px.');
+					$imgUpload->setObs('A imagem deve ter 540x900px.');
 					$imgUpload->render();
 					?>
 				</div>

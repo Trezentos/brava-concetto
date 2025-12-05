@@ -36,30 +36,41 @@ $qPlantasImagens = $db->get_results("SELECT * FROM {$tables['PLANTAS_IMAGENS']} 
                         if ($qPlantasImagem->planta_id != $qPlanta->id) continue;
                         $hasBlock   = !empty($qPlantasImagem->metragem) | !empty($qPlantasImagem->descricao);
                     ?>
-                    <div class="item pt125 pb150" data-title="<?= htmlspecialchars($qPlantasImagem->titulo) ?>" style="<?= $hasBlock ? '': 'justify-content: center;' ?>">
-                        <figure>
-                            <img src="<?=HTTP_UPLOADS_IMG.$qPlantasImagem->arquivo?>" alt="<?=$qPlantasImagem->titulo?>">
-                        </figure>
-
-                        <div class="info-block <?=$hasBlock ? '' : 'is-hidden'?>">
-
-                            <?php if (!empty($qPlantasImagem->metragem)): ?>
-                                <div>
-                                    <img src="<?=IMG.'icons/metragem-carousel.svg'?>" alt="">
-                                    <p><?= $qPlantasImagem->metragem ?> m²</p>
-                                </div>
-                            <?php endif; ?>
-
-                            <?php if (!empty($qPlantasImagem->descricao)): ?>
-                                <p><?= $qPlantasImagem->descricao ?></p>
-                            <?php endif; ?>
-
+                    <a
+                            href="<?= HTTP_UPLOADS_IMG.'lg-'.$qPlantasImagem->arquivo; ?>"
+                            data-fancybox="<?=$qPlantasImagem->planta_id?>"
+                            data-caption="<?=$qPlantasImagem->titulo?>"
+                            class=""
+                    >
+                        <div class="item pt125 pb150" data-title="<?= htmlspecialchars($qPlantasImagem->titulo) ?>" style="<?= $hasBlock ? '': 'justify-content: center;' ?>">
+                            <figure>
+                                <img src="<?=HTTP_UPLOADS_IMG.$qPlantasImagem->arquivo?>" alt="<?=$qPlantasImagem->titulo?>">
+                            </figure>
+    
+                            <div class="info-block  <?=$hasBlock ? '' : 'is-hidden'?>">
+    
+                                <?php if (!empty($qPlantasImagem->metragem)): ?>
+                                    <div class="mb30">
+                                        <img src="<?=IMG.'icons/metragem-carousel.svg'?>" alt="">
+                                        <p><?= $qPlantasImagem->metragem ?></p>
+                                    </div>
+                                <?php endif; ?>
+    
+                                <?php if (!empty($qPlantasImagem->descricao)): ?>
+                                    <p><?= $qPlantasImagem->descricao ?></p>
+                                <?php endif; ?>
+    
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 <?php endforeach; ?>
             </div>
 
         </div>
     <?php endforeach; ?>
 </div>
+
+
+
+
 

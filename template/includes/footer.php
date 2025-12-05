@@ -4,31 +4,31 @@ $pg = $_SEO["permalink"];
 $pages = [
     [
         'text' => 'início',
-        'link' => 'inicio',
+        'link' => '#inicio',
     ],
     [
         'text' => 'apresentação',
-        'link' => 'apresentacao',
+        'link' => '#apresentacao',
     ],
     [
         'text' => 'detalhes',
-        'link' => 'detalhes',
+        'link' => '#detalhes',
     ],
     [
         'text' => 'galeria',
-        'link' => 'galeria',
+        'link' => '#galeria',
     ],
     [
         'text' => 'plantas',
-        'link' => 'plantas',
+        'link' => '#plantas',
     ],
     [
         'text' => 'localizacao',
-        'link' => 'localização',
+        'link' => '#localização',
     ],
     [
         'text' => 'fale conosco',
-        'link' => 'fale-conosco',
+        'link' => '#fale-conosco',
     ]
 ]
 
@@ -44,7 +44,7 @@ $pages = [
                         <ul>
                             <?php foreach($pages as $page): ?>
                                 <li>
-                                    <a href="#<?=HTTP.$page['link']?>"><p><?=$page['text']?></p></a>
+                                    <a class="menu-item smooth-scroll-link" href="<?=$page['link']?>"><p><?=$page['text']?></p></a>
                                 </li>
                             <?php endforeach; ?>
                         </ul>

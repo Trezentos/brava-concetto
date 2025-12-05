@@ -5,7 +5,7 @@ $menu_items = [
     ['href' => '#detalhes',     'label' => 'detalhes',      'time' => 5000],
     ['href' => '#galeria',      'label' => 'galeria',       'time' => 5000],
     ['href' => '#plantas',      'label' => 'plantas',       'time' => 5000],
-    ['href' => '#localização',  'label' => 'localização',   'time' => 5000],
+    ['href' => '#localizacao',  'label' => 'localização',   'time' => 5000],
     ['href' => '#fale-conosco', 'label' => 'fale conosco',  'time' => 5000],
 ];
 ?>
@@ -13,9 +13,9 @@ $menu_items = [
 
     <img class="bt-close-menu waypoint animation_scale" src="<?=IMG?>icons/close.svg" alt="Fechar">
 
-    <div class="container-menu xhas-text-centered">
+    <div class="container-menu xhas-text-centered pl30-mobile pr30-mobile">
         <img src="<?=IMG.'brava-concetto-logo.svg'?>" class="waypoint animation_right_d1 animated main-logo" alt="">
-        <ul class="waypoint animation_right_d1 animated font-secondary mt35">
+        <ul class="waypoint animation_right_d1 animated font-secondary mt35 mt10-mobile">
             <?php foreach ($menu_items as $item): ?>
                 <li>
                     <a href="<?= $item['href'] ?>" class="menu-item smooth-scroll-link pt20-notebook pb20-notebook" data-smooth-time-link="<?= $item['time'] ?>">
@@ -24,7 +24,7 @@ $menu_items = [
                 </li>
             <?php endforeach; ?>
         </ul>
-        <div class="redes-sociais-menu mt50 waypoint animation_bottom_d2 animated">
+        <div class="redes-sociais-menu mt40 waypoint animation_bottom_d2 animated">
             <?php include TEMPLATE.'sections/redes-sociais.php' ?>
             <p><?=ENDERECO?></p>
         </div>

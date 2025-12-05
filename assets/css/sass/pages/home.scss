@@ -117,6 +117,16 @@
             margin-top: 33px;
           }
         }
+
+        .arquitetura-buttons {
+          p { transition: 0.4s; color: $root-color; cursor: pointer; }
+
+          p.is-active {
+            font-weight: 700;
+            font-size: 30px;
+            color: #847256;
+          }
+        }
       }
     }
 
@@ -156,9 +166,10 @@
           font-weight: 400;
           font-size: 15.4px;
           text-align: right;
-          color: $ocre-escuro;
-          left: -116px;
+          color: #847256;
+          right: 674px;
           bottom: 260px;
+          WIDTH: 400PX;
 
           strong {
             font-size: 24.2px;
@@ -176,6 +187,24 @@
 
         }
       }
+
+      .assinaturas-images {
+        position: relative;
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+          transition: 0.4s;
+        }
+
+        img.is-active {
+          position: relative;
+          opacity: 1;
+        }
+      }
+
 
     }
 
@@ -501,4 +530,64 @@ section.mapa {
 
 .fancybox-caption__body {
   color: #FFF;
+}
+
+
+// Smartphone
+@media(max-width: 578px){
+  .section-banner {
+    &, iframe, .cover-aram {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 540 / 900;
+    }
+  }
+
+  .section-intro {
+    .content {
+      grid-template-columns: 1fr;
+      .left  { grid-area: left; }
+      .right { grid-area: right; }
+      grid-template-areas:
+            "right"
+            "left";
+
+      .left {
+        .image-container img {
+          width: 100%;
+          max-width: 394px;
+          margin: 0 auto;
+        }
+
+        .skills-block {
+          hr { width: 150%; }
+
+          h4 {
+            font-size: 48px;
+            font-family: $secondary-font;
+          }
+
+           div {
+            max-width: 100%;
+
+            .skill-block-mobile {
+              max-width: 394px;
+            }
+          }
+
+
+        }
+      }
+    }
+
+    .right .text-container p {
+      max-width: 394px !important;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+
+
+  }
+
 }

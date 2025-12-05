@@ -36,7 +36,7 @@
 
 
   &:hover {
-    img {
+    img.double-arrow {
       left: 15px;
       transition: 0.4s;
 
@@ -48,7 +48,7 @@
   .form-block {
     position: absolute;
     left: 1000px;
-    transition: 0.6s ease;
+    transition: 1.2s ease-out;
     top: 130px;
     background-color: $root-color;
     width: 100%;
@@ -110,6 +110,13 @@
 
 
   }
+
+  .seta-div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
 }
 
 
@@ -118,5 +125,30 @@
   .side-form {
     top: -25px;
     width: 600px;
+
+
+  }
+}
+
+// Smartphone
+@media(max-width: 578px){
+  .side-form {
+    width: calc((#{360} / 540) * 100vw);
+    height: auto;
+    max-height: unset;
+    z-index: 99;
+
+    padding: calc((#{46} / 540) * 100vw) calc((#{60} / 540) * 100vw) calc((#{34} / 540) * 100vw) calc((#{62} / 540) * 100vw);
+
+    p {
+      line-height: calc((#{24} / 540) * 100vw);
+      font-size: calc((#{24} / 540) * 100vw);
+    }
+
+    .seta-div p { font-size: calc((#{20} / 540) * 100vw); }
+
+    .form-block {
+      top: calc((#{160} / 540) * 100vw);
+    }
   }
 }

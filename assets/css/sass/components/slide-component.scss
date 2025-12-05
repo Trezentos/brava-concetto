@@ -123,14 +123,12 @@
 
         .info-block {
           width: 416px;
-          height: 440px;
-          background: $root-color;
+          min-height: 440px;
+          background: #948369;
           position: relative;
           left: 110px;
-          color: white;
-          padding-top: 50px;
-          padding-left: 40px;
-          padding-right: 40px;
+          color: #fff;
+          padding: 50px 40px;
 
           div {
             display: flex;

@@ -17,6 +17,7 @@
   justify-content: center;
   align-items: flex-start;
   padding-top: 104px;
+  z-index: 1100;
 
   &.is-active {
     right: 0;
@@ -115,4 +116,43 @@
     font-size: 18px;
     margin: 0 auto;
   }
+}
+
+// Smartphone
+@media(max-width: 578px){
+
+  .menu {
+    padding-top: 65px;
+
+
+
+    .container-menu { padding: 0 95px; }
+
+    .main-logo {
+
+      position: absolute;
+      width: calc((#{340} / 540) * 100vw);
+      top: calc((#{-34} / 540) * 100vw);
+      left: 90px;
+    }
+
+    .redes-sociais-menu .redes-sociais {
+      flex-wrap: wrap;
+    }
+
+    .container-menu {
+      padding: 0 100px;
+    }
+
+    a.menu-item {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    .bt-close-menu {
+      top: 30px;
+      left: 30px;
+    }
+  }
+
 }

@@ -101,34 +101,34 @@ $pg = $_SEO["permalink"];
 <body id="topo">
 
 
-	<header id="topo" class="xwaypoint xanimation_top is-invisible" >
-		<div class="wrap super-wide-header">
+<header id="topo" class="xwaypoint xanimation_top" >
+    <div class="wrap super-wide-header">
 
-			<nav class="is-relative" role="navigation" aria-label="main navigation">
+        <nav class="is-relative waypoint animation_bottom" role="navigation" aria-label="main navigation">
 
-				<div class="columns is-mobile">
+            <div class="columns is-mobile">
 
-					<div class="column is-1 is-6-tablet is-4-mobile waypoint animation_left_dd1">
-                        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
-                        </a>
-					</div>
+                <div class="column is-1 is-6-tablet is-4-mobile waypoint animation_left_dd1">
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
 
 
-					<div class="column is-11 is-1-tablet is-2-mobile is-relative waypoint animation_left_dd2">
-                        <img src="<?=IMG.'brava-concetto-logo.svg'?>" class="brava-concetto-logo" alt="">
-					</div>
+                <div class="column is-11 is-1-tablet is-2-mobile <?=$MOBILE ? '' : 'is-relative'?> ">
+                    <img src="<?=IMG.($MOBILE ? 'brava-concetto-logo-mobile.svg' : 'brava-concetto-logo-escuro.svg')?>" class="brava-concetto-logo" alt="">
+                </div>
 
-				</div>
-			
-			</nav>
+            </div>
 
-		</div>
-	</header>
+        </nav>
 
+    </div>
+</header>
     <?php include TEMPLATE.'includes/menu.php' ?>
+
 
 	<!-- MAIN -->
 	<main class="smooth-scroll-container">

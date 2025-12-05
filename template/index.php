@@ -52,11 +52,12 @@ if( !IS_LIGHTHOUSE )
         'swiper-bundle.min.js',
         'galeria-slide.js',
         'side-form.js',
+        'assinaturas.js',
     ]);
 }
-
-
 get_header();
+
+
 ?>
 
 
@@ -73,74 +74,89 @@ get_header();
 <?php if(true): ?>
 
 
-    <div
-            class="cycle-slideshow main-banners"
-            data-cycle-slides=".li"
-            data-cycle-timeout="700000"
-            data-cycle-pause-on-hover="false"
-            data-cycle-log="false"
-            data-cycle-speed="1000"
-            data-cycle-pager-template="<div class='pager-button'><span></span></div>"
-    >
+<div
+        class="cycle-slideshow main-banners"
+        data-cycle-slides=".li"
+        data-cycle-timeout="700000"
+        data-cycle-pause-on-hover="false"
+        data-cycle-log="false"
+        data-cycle-speed="1000"
+        data-cycle-pager-template="<?= $MOBILE ? '' : '<div class=&quot;pager-button&quot;><span></span></div>' ?>"
+>
 
-        <?php foreach($qBanners as $banner): ?>
-            <div class="li" style="background-image: url(<?=HTTP_UPLOADS_IMG.$banner->imagem?>)">
-                <!--            <img src="--><?php //=HTTP_UPLOADS_IMG.$banner->imagem?><!--" alt="--><?php //=$banner->titulo?><!--">-->
-            </div>
-        <?php endforeach; ?>
-        <div class="cycle-pager "></div>
+    <?php foreach ($qBanners as $banner): ?>
+        <div
+                class="li"
+                style="background-image: url('<?= HTTP_UPLOADS_IMG . ($MOBILE ? $banner->imagem_mobile : $banner->imagem) ?>')"
+        >
+        </div>
+    <?php endforeach; ?>
 
-    </div>
-
-
-
-
+    <div class="cycle-pager"></div>
+</div>
 
 
 
-
-<section class="section-intro is-relative">
-    <?php include TEMPLATE.'includes/side-form.php' ?>
+<?php endif; ?>
+<section class="section-intro is-relative" id="apresentação">
+        <?php include TEMPLATE.'includes/side-form.php' ?>
 
     <div class="wrap">
 
         <div class="content">
             <div class="left">
-                <div class="image-container waypoint animation_left_d1">
+                <div class="image-container waypoint animation_left_d1 mt50-mobile">
                     <img src="<?=IMG.'brava-concetto-design.jpg'?>" class="" alt="">
                 </div>
 
-                <div class="skills-block animation_bottom">
+                <div class="skills-block animation_bottom pl0-mobile">
                     <hr>
 
-                    <div>
-                        <p class="waypoint animation_left_d1"><strong>arquitetura</strong></p>
+                    <h4 class="is-hidden-desktop">assinaturas</h4>
+
+                    <div class="arquitetura-buttons">
+                        <p class="waypoint animation_left_d1 btn-ass is-active">arquitetura</p>
+
+                        <div class="is-hidden-desktop skill-block-mobile">
+                            <p class="waypoint animation_right_d1 mt145 mt70-mobile pr20-mobile pl20-mobile has-text-centered-mobile">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id dui et tortor finibus laoreet. Vivamus cursus est vitae purus elementum ultricies. Aliquam erat volutpat. Suspendisse sollicitudin tempor arcu, et congue metus placerat vel. Maecenas enim ex, feugiat ac viverra vel, volutpat in urna.
+                            </p>
+
+                            <img src="<?=IMG.'debora-aguia-brava-concetto.jpg'?>" class="waypoint animation_bottom" alt="">
+
+                            <hr>
+
+                            <div class="debora-text animation_left">
+                                <strong class="font-secondary">Débora Aguiar</strong><br>
+                                arquiteta e urbanista
+                            </div>
+                        </div>
 
                         <hr class="waypoint animation_elastic_d1">
-                        <p class="waypoint animation_left color-root">paisagismo</p>
+                        <p class="waypoint animation_left color-root btn-ass">paisagismo</p>
 
                         <hr class="waypoint animation_elastic_d1">
-                        <p class="waypoint animation_left_d1 color-root">interiores</p>
+                        <p class="waypoint animation_left_d1 color-root btn-ass">interiores</p>
 
                         <hr class="waypoint animation_elastic_d1">
-                        <p class="waypoint animation_left_d2 color-root">luminotécnico</p>
+                        <p class="waypoint animation_left_d2 color-root btn-ass">luminotécnico</p>
                     </div>
                 </div>
             </div>
 
             <div class="right">
-                <div class="text-container pl125 pl80-notebook">
+                <div class="text-container pl125 pl0-mobile pl80-notebook">
 
-                    <p class="waypoint animation_right_d1 mt145">
-                        Entre o ritmo do mar e o silêncio do design, <br>
-                        surge um novo conceito de viver. <br>
-                        Leve, atemporal e essencial - como tudo o que permanece. <br>
+                    <p class="waypoint animation_right_d1 mt145 mt70-mobile pr20-mobile pl20-mobile has-text-centered-mobile">
+                        Entre o ritmo do mar e o silêncio do design, <br class="is-hidden-mobile">
+                        surge um novo conceito de viver. <br class="is-hidden-mobile">
+                        Leve, atemporal e essencial - como tudo o que permanece. <br class="is-hidden-mobile">
                         Aqui, morar é ser envolvido pela beleza plena.
                     </p>
                 </div>
 
 
-                <div class="text-container pl125 pl80-notebook pt105 mt125">
+                <div class="text-container pl125 pl80-notebook pt105 mt125 is-hidden-mobile">
                     <img src="<?=IMG.'paper-background.png'?>" class="paper-background waypoint animation_bottom_d1" alt="">
 
                     <h2 class=" animation_bottom_d2 font-secondary">
@@ -152,8 +168,13 @@ get_header();
                     </p>
                 </div>
 
-                <div class="image-container pl125 pl80-notebook mt85">
-                    <img src="<?=IMG.'debora-aguia-brava-concetto.jpg'?>" class=" animation_bottom" alt="">
+                <div class="image-container pl125 pl80-notebook mt85 is-hidden-mobile">
+                    <div class="assinaturas-images waypoint animation_bottom ">
+                        <img src="<?=IMG.'debora-aguia-brava-concetto.jpg'?>" class="is-active" alt="">
+                        <img src="<?=IMG.'ana_holzer.jpg'?>" class="" alt="">
+                        <img src="<?=IMG.'frederico_carstens.jpg'?>" class="" alt="">
+                        <img src="<?=IMG.'antonio_jose_goncalves.jpg'?>" class="" alt="">
+                    </div>
 
                     <div class="debora-text animation_left">
                         <strong class="font-secondary">Débora Aguiar</strong><br>
@@ -170,7 +191,10 @@ get_header();
 
 
 
-<section class="section-video">
+
+
+
+<section class="section-video is-hidden">
     <div class="wrap">
         <div class="video-container ">
             <div id="video-container"  data-video="LGrn-3UpPEY" class="video-container-iframe"> </div>
@@ -181,7 +205,6 @@ get_header();
         </div>
     </div>
 </section>
-<?php endif; ?>
     <?php
 
     $caracteristicas = [
@@ -196,7 +219,7 @@ get_header();
     ];
 
     ?>
-    <section class="section-caracteristicas pt60 pb0                 pt180"  id="localizacao">
+    <section class="section-caracteristicas pt60 pb0 "  id="detalhes">
         <div class="wrap">
 
             <div class="content">
@@ -240,7 +263,7 @@ get_header();
     </section>
 
 
-    <section class="section-carousel pt0 pb0 is-relative pt80-mobile pb80-mobile pt100-notebook pb50-notebook pt100-tablet ">
+    <section class="section-carousel pt0 pb0 is-relative pt80-mobile pb80-mobile pt100-notebook pb50-notebook pt100-tablet " id="galeria">
         <div class="wrap">
             <img src="<?=IMG.'paper-background-carousel.png'?>" class="paper-background waypoint animation_bottom_d1" alt="">
 
@@ -285,7 +308,7 @@ get_header();
 
 
 
-    <section class="section-plantas">
+    <section class="section-plantas" id="plantas">
         <div class="wrap smaller">
 
             <div class="title-container mb70">
@@ -335,7 +358,7 @@ get_header();
     </div>
 </section>
 
-<section class="mapa">
+<section class="mapa" id="localizacao">
     <h3>Mais que uma localização, uma escolha de vida</h3>
     <p class="mb40"><?=ENDERECO?></p>
 
@@ -372,7 +395,7 @@ get_header();
             ]
         ?>
 
-        <div class="distances-block">
+        <div class="distances-block" id="fale-conosco">
             <?php foreach($distances as $distance): ?>
                 <div>
                     <p><?=$distance['title']?></p>
