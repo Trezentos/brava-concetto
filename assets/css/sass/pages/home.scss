@@ -268,30 +268,49 @@
     display: grid;
     grid-template-columns: 523fr 971fr;
 
+    .left {
+      .image-container {
+        position: relative;
+
+        .selo-gbc {
+          position: absolute;
+          top: -37px;
+          left: -35px;
+          width: 170px;
+          height: 170px;
+        }
+      }
+    }
+
     .right {
       display: flex;
       justify-content: center;
+
+      h2 {
+        font-size: 48px;
+        margin-bottom: 120px;
+        color: $ocre-escuro;
+      }
 
       .container-right {
         width: 100%;
         max-width: 742px;
 
+        div {
+          position: relative;
 
-        .grid-caracteristicas {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 26px 20px;
-
-          div {
-            p {
-              font-weight: 500;
-              font-size: 18px;
-            }
-            hr {
-              height: 2px;
-              background: $bege-color;
-            }
+          p {
+            position: absolute;
+            left: 110px;
+            bottom: -60px;
+            color: $ocre-escuro;
           }
+        }
+
+        > p {
+          width: 100%;
+          max-width: 535px;
+          color: $ocre-escuro;
         }
       }
 
@@ -302,9 +321,34 @@
 }
 
 section.section-plantas {
+  padding-top: 195px;
+
   p { font-size: 22px;}
 
   h2 { font-weight: 500; }
+
+  .title-container {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+
+    hr {
+      position: absolute;
+      top: 0;
+      height: 3px;
+      right: 0;
+      margin: 0;
+      width: 2000px;
+    }
+
+    h2 {
+      font-family: $secondary-font;
+      max-width: 325px;
+      width: 100%;
+      padding-top: 20px;
+      margin: 0 auto;
+    }
+  }
 
   .selo-container {
     display: flex;
@@ -326,10 +370,11 @@ section.section-plantas {
 }
 
 section.mapa {
-  margin-top: 100px;
+  margin-top: 110px;
 
   h3 , p {
     text-align: center;
+    color: $ocre-escuro;
   }
 
   h3 {

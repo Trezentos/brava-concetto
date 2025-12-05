@@ -90,4 +90,39 @@ button, .button {
       color: $primary-color;
     }
   }
+
+  &.is-loading span.loading-animation {
+    border: 2px solid black;
+    border-right-color: transparent;
+    border-top-color: transparent;
+  }
+
+  &.is-loading {
+    pointer-events: none;
+    //width: 208px;
+    justify-content: flex-start;
+
+    .arrow-container { display: none; }
+
+    span.text {
+      color: transparent !important;
+    }
+
+    span.loading-animation {
+      animation: spinAround 500ms infinite linear;
+      border: 2px solid $ocre-escuro;
+      border-radius: 290486px;
+      border-right-color: transparent;
+      border-top-color: transparent;
+      content: "";
+      display: block;
+      height: 1.1em;
+      width: 1.1em;
+      position: absolute;
+      margin: 0 auto;
+      top: 30%;
+      right: 44%;
+      transform: translate(50%, -50%);
+    }
+  }
 }

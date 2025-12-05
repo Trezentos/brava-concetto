@@ -253,7 +253,7 @@ jQuery(document).ready(function($)
 
 
 	// SEND FORM
-	$('#form-contato').submit(function()
+	$('.form-contato').submit(function()
 	{
 		const __this = $(this);
 		var DATA 	 = $(this).serialize();
@@ -273,7 +273,7 @@ jQuery(document).ready(function($)
 				if(json.status=="1")
 				{
 					__this.find('input').val('');
-					// __this.find('textarea').val('');
+					__this.find('textarea').val('');
 
 					Swal.fire({
 						title: 'SUCESSO!',

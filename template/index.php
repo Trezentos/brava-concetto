@@ -51,6 +51,7 @@ if( !IS_LIGHTHOUSE )
         'videoconfig.js',
         'swiper-bundle.min.js',
         'galeria-slide.js',
+        'side-form.js',
     ]);
 }
 
@@ -69,6 +70,7 @@ get_header();
 <!--    </div>-->
 <!--</section>-->
 
+<?php if(true): ?>
 
 
     <div
@@ -97,74 +99,74 @@ get_header();
 
 
 
-    <section class="section-intro" >
-        <div class="wrap">
+<section class="section-intro is-relative">
+    <?php include TEMPLATE.'includes/side-form.php' ?>
 
-            <div class="content">
-                <div class="left">
-                    <div class="image-container waypoint animation_left_d1">
-                        <img src="<?=IMG.'brava-concetto-design.jpg'?>" class="" alt="">
-                    </div>
+    <div class="wrap">
 
-                    <div class="skills-block animation_bottom">
-                        <hr>
-
-                        <div>
-                            <p class="waypoint animation_left_d1"><strong>arquitetura</strong></p>
-
-                            <hr class="waypoint animation_elastic_d1">
-                            <p class="waypoint animation_left color-root">paisagismo</p>
-
-                            <hr class="waypoint animation_elastic_d1">
-                            <p class="waypoint animation_left_d1 color-root">interiores</p>
-
-                            <hr class="waypoint animation_elastic_d1">
-                            <p class="waypoint animation_left_d2 color-root">luminotécnico</p>
-                        </div>
-                    </div>
+        <div class="content">
+            <div class="left">
+                <div class="image-container waypoint animation_left_d1">
+                    <img src="<?=IMG.'brava-concetto-design.jpg'?>" class="" alt="">
                 </div>
 
-                <div class="right">
-                    <div class="text-container pl125 pl80-notebook">
-                        <h2 class="waypoint animation_right_d1">
-                            frase conceito sobre <br>
-                            o empreendimento
-                        </h2>
-                        <br><br><br>
-                        <p class="mt5 waypoint animation_right_d1">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id dui et tortor finibus laoreet. Vivamus cursus est vitae purus elementum ultricies. Aliquam erat volutpat. Suspendisse sollicitudin tempor arcu, et congue metus placerat vel. Maecenas enim ex, feugiat ac viverra vel, volutpat in urna.
-                        </p>
-                    </div>
+                <div class="skills-block animation_bottom">
+                    <hr>
 
-
-                    <div class="text-container pl125 pl80-notebook pt105 mt125">
-                        <img src="<?=IMG.'paper-background.png'?>" class="paper-background waypoint animation_bottom_d1" alt="">
-
-                        <h2 class=" animation_bottom_d2">
-                            frase conceito texto <br>
-                            arquitetos
-                        </h2>
-                        <br><br>
-                        <p class="mt5  animation_bottom_d2">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id dui et tortor finibus laoreet. Vivamus cursus est vitae purus elementum ultricies. Aliquam erat volutpat. Suspendisse sollicitudin tempor arcu, et congue metus placerat vel. Maecenas enim ex, feugiat ac viverra vel, volutpat in urna.
-                        </p>
-                    </div>
-
-                    <div class="image-container pl125 pl80-notebook mt85">
-                        <img src="<?=IMG.'debora-aguia-brava-concetto.jpg'?>" class=" animation_bottom" alt="">
-
-                        <div class="debora-text animation_left">
-                            <strong class="font-secondary">Débora Aguiar</strong><br>
-                            arquiteta e urbanista
-                        </div>
+                    <div>
+                        <p class="waypoint animation_left_d1"><strong>arquitetura</strong></p>
 
                         <hr class="waypoint animation_elastic_d1">
+                        <p class="waypoint animation_left color-root">paisagismo</p>
+
+                        <hr class="waypoint animation_elastic_d1">
+                        <p class="waypoint animation_left_d1 color-root">interiores</p>
+
+                        <hr class="waypoint animation_elastic_d1">
+                        <p class="waypoint animation_left_d2 color-root">luminotécnico</p>
                     </div>
                 </div>
             </div>
 
+            <div class="right">
+                <div class="text-container pl125 pl80-notebook">
+
+                    <p class="waypoint animation_right_d1 mt145">
+                        Entre o ritmo do mar e o silêncio do design, <br>
+                        surge um novo conceito de viver. <br>
+                        Leve, atemporal e essencial - como tudo o que permanece. <br>
+                        Aqui, morar é ser envolvido pela beleza plena.
+                    </p>
+                </div>
+
+
+                <div class="text-container pl125 pl80-notebook pt105 mt125">
+                    <img src="<?=IMG.'paper-background.png'?>" class="paper-background waypoint animation_bottom_d1" alt="">
+
+                    <h2 class=" animation_bottom_d2 font-secondary">
+                        assinaturas
+                    </h2>
+                    <br><br>
+                    <p class="mt5  animation_bottom_d2">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id dui et tortor finibus laoreet. Vivamus cursus est vitae purus elementum ultricies. Aliquam erat volutpat. Suspendisse sollicitudin tempor arcu, et congue metus placerat vel. Maecenas enim ex, feugiat ac viverra vel, volutpat in urna.
+                    </p>
+                </div>
+
+                <div class="image-container pl125 pl80-notebook mt85">
+                    <img src="<?=IMG.'debora-aguia-brava-concetto.jpg'?>" class=" animation_bottom" alt="">
+
+                    <div class="debora-text animation_left">
+                        <strong class="font-secondary">Débora Aguiar</strong><br>
+                        arquiteta e urbanista
+                    </div>
+
+                    <hr class="waypoint animation_elastic_d1">
+                </div>
+            </div>
         </div>
-    </section>
+
+    </div>
+</section>
 
 
 
@@ -179,8 +181,8 @@ get_header();
         </div>
     </div>
 </section>
-
-<?php
+<?php endif; ?>
+    <?php
 
     $caracteristicas = [
         'Lorem ipsum dolor sit amet',
@@ -193,126 +195,118 @@ get_header();
         'Lorem ipsum dolor sit amet',
     ];
 
-?>
-<section class="section-caracteristicas pt60 pb0"  id="localizacao">
-	<div class="wrap">
+    ?>
+    <section class="section-caracteristicas pt60 pb0                 pt180"  id="localizacao">
+        <div class="wrap">
 
-        <div class="content">
-            <div class="left">
-                <div class="image-container waypoint animation_left">
-                    <img src="<?=IMG.'brava-concetto-fachada.jpg'?>" class="" alt="">
-                </div>
-            </div>
-            <div class="right ">
-
-                <div class="container-right pl13 pl60-notebook ">
-                    <img src="<?=IMG.'brava-concetto-logo-escuro.svg'?>" class="mt45 waypoint animation_left" alt="">
-
-                    <div class="grid-caracteristicas mt95 waypoint animation_bottom_d2">
-                        <?php foreach($caracteristicas as $item): ?>
-                            <div>
-                                <p><?=$item?></p>
-                                <hr>
-                            </div>
-                        <?php endforeach; ?>
+            <div class="content">
+                <div class="left">
+                    <div class="image-container waypoint animation_left">
+                        <img src="<?=IMG.'selo-gbc.png'?>" class="selo-gbc" alt="">
+                        <img src="<?=IMG.'brava-concetto-fachada.jpg'?>" class="" alt="">
                     </div>
                 </div>
+                <div class="right ">
 
-            </div>
-        </div>
-	</div>
-</section>
+                    <div class="container-right pl13 pl60-notebook waypoint animation_left">
+                        <div>
+                            <h2 class="mt20 waypoint animation_left_d1 font-secondary">
+                                singularidades
+                            </h2>
+                            <p>
+                                Design, conforto e tecnologia em harmonia <br>
+                                com a arte de viver bem
+                            </p>
+                        </div>
 
 
-<section class="section-carousel pt0 pb0 is-relative pt80-mobile pb80-mobile pt100-notebook pb50-notebook pt100-tablet ">
-    <div class="wrap">
-        <img src="<?=IMG.'paper-background-carousel.png'?>" class="paper-background waypoint animation_bottom_d1" alt="">
 
-        <div class="title-container ">
-            <div></div>
-            <div class="content ">
-                <div class=" pl13">
-                    <hr class="waypoint animation_elastic_d1">
-<!--                    <h2 class="waypoint animation_bottom">área de lazer</h2>-->
-                </div>
-            </div>
-        </div>
-
-        <div class="swiper slide-imoveis swiper-imoveis mt40 mb90 mb0-tablet mb10-mobile waypoint animation_bottom">
-            <div class="swiper-wrapper">
-                <?php foreach ($qGaleria1 as $card): ?>
-                    <div class="swiper-slide" data-title="<?= $card->legenda; ?>">
-                        <a
-                                href="<?=  HTTP_UPLOADS_IMG.'lg-'.$card->arquivo; ?>"
-                                data-fancybox="galeria-1"
-                                data-caption="<?= $card->legenda; ?>"
-                                class=""
-                        >
-                            <h2><?= $card->legenda; ?></h2>
-                            <figure class="image-container">
-                                <img
-                                        src="<?= HTTP_UPLOADS_IMG.'tb-'.$card->arquivo;; ?>"
-                                        alt="<?= 'Titulo: '.$card->legenda; ?>"
-                                >
-                                <img src="<?=IMG.'icons/expand.svg'?>" class="expand-icon" alt="">
-                            </figure>
-                        </a>
+                        <p class="waypoint animation_left_d2">
+                            Certificado pelo selo internacional GBC®, o Brava Concetto nasce do encontro entre tecnologia e natureza - um equilíbrio que se sente no ar, na luz, no silêncio.
+                            <br><br>
+                            Aqui, a água é purificada, o ar circula com conforto térmico e acústico, a umidade é controlada e a energia flui com inteligência.
+                            <br><br>
+                            Cada decisão construtiva reflete respeito ao ambiente e cuidado com o essencial: 
+                            <br>
+                            <span class="ml10">bem-estar de quem vive.</span>
+                            <br><br>
+                            Um luxo sutil, presente em cada respiração.
+                        </p>
                     </div>
-                <?php endforeach; ?>
-            </div>
 
-            <div class="swiper-scrollbar"></div>
-        </div>
-
-    </div>
-</section>
-
-
-
-<section class="section-plantas">
-    <div class="wrap smaller">
-        <div class="selo-container">
-            <div class="image-container">
-                <img src="<?=IMG.'selo-gbc.png'?>" class="" alt="">
-            </div>
-
-            <div class="text-container">
-                <h2 class="mt20 color-ocre-escuro">selo de sustentabilidade</h2>
-                <p class="color-ocre-escuro">
-                    Infraestrutura para recarga de veículos elétricos <br>
-                    e soluções que ampliam o bem-estar.
-                </p>
-
-                <hr class="mt60">
-            </div>
-        </div>
-
-        <h2 class="has-text-centered mt125 mb80 color-ocre-escuro">
-            qual planta combina mais <br>
-            com a sua familia
-        </h2>
-
-
-        <?php include TEMPLATE.'includes/slide-component.php'; ?>
-    </div>
-</section>
-
-<section class="section-carousel pt0 pb0 is-relative pt80-mobile pb80-mobile pt100-notebook pb50-notebook pt100-tablet">
-    <div class="wrap">
-        <img src="<?=IMG.'paper-background-extended.webp'?>" class="paper-background waypoint animation_bottom_d1" alt="">
-
-        <div class="title-container ">
-            <div></div>
-            <div class="content ">
-                <div class=" pl13">
-                    <hr class="waypoint animation_elastic_d1">
-                    <!--                    <h2 class="waypoint animation_bottom">área de lazer</h2>-->
                 </div>
             </div>
         </div>
+    </section>
+
+
+    <section class="section-carousel pt0 pb0 is-relative pt80-mobile pb80-mobile pt100-notebook pb50-notebook pt100-tablet ">
+        <div class="wrap">
+            <img src="<?=IMG.'paper-background-carousel.png'?>" class="paper-background waypoint animation_bottom_d1" alt="">
+
+            <div class="title-container ">
+                <div></div>
+                <div class="content ">
+                    <div class=" pl13">
+                        <hr class="waypoint animation_elastic_d1">
+                        <!--                    <h2 class="waypoint animation_bottom">área de lazer</h2>-->
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper slide-imoveis swiper-imoveis mt40 mb90 mb0-tablet mb10-mobile waypoint animation_bottom">
+                <div class="swiper-wrapper">
+                    <?php foreach ($qGaleria1 as $card): ?>
+                        <div class="swiper-slide" data-title="<?= $card->legenda; ?>">
+                            <a
+                                    href="<?=  HTTP_UPLOADS_IMG.'lg-'.$card->arquivo; ?>"
+                                    data-fancybox="galeria-1"
+                                    data-caption="<?= $card->legenda; ?>"
+                                    class=""
+                            >
+                                <h2><?= $card->legenda; ?></h2>
+                                <figure class="image-container">
+                                    <img
+                                            src="<?= HTTP_UPLOADS_IMG.'tb-'.$card->arquivo;; ?>"
+                                            alt="<?= 'Titulo: '.$card->legenda; ?>"
+                                    >
+                                    <img src="<?=IMG.'icons/expand.svg'?>" class="expand-icon" alt="">
+                                </figure>
+                            </a>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+
+                <div class="swiper-scrollbar"></div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section class="section-plantas">
+        <div class="wrap smaller">
+
+            <div class="title-container mb70">
+                <hr class="waypoint animation_left">
+                <h2 class="has-text-centered waypoint animation_left_d1">
+                    apartamentos
+                </h2>
+            </div>
+
+            <?php include TEMPLATE.'includes/slide-component.php'; ?>
+        </div>
+    </section>
+
+
+<section class="section-carousel second pt0 pb0 is-relative pt80-mobile pb80-mobile pt100-notebook pb50-notebook pt100-tablet ">
+    <div class="wrap">
+
+
 
         <div class="swiper slide-imoveis swiper-imoveis mt40 mb90 mb0-tablet mb10-mobile waypoint animation_bottom">
-
+            <hr class="waypoint animation_elastic_d1">
             <div class="swiper-wrapper">
                 <?php foreach ($qGaleria2 as $card): ?>
                     <div class="swiper-slide" data-title="<?= $card->legenda; ?>">
@@ -400,12 +394,12 @@ get_header();
             entrará em contato para esclarecer todas as suas dúvidas.
         </p>
 
-        <form id="form-contato" action="" method="post">
+        <form id="form-contato" class="form-contato" action="" method="post">
 
             <div class="row">
                 <input type="text" name="nome" class="input" placeholder="Nome completo" required />
 
-                <input type="text" name="telefone" class="input" placeholder="Telefone / Whatsapp" required />
+                <input type="text" name="telefone" class="input telefone" placeholder="Telefone / Whatsapp" required />
 
                 <input type="email" name="email" class="input" placeholder="E-mail" required />
             </div>
@@ -425,7 +419,10 @@ get_header();
             </div>
 
             <div class="mt20 button-container">
-                <button class="btn" type="submit" name="submit"><span class="font-secondary">ENVIAR</span></button>
+                <button class="btn" type="submit" name="submit">
+                    <span class="loading-animation"></span>
+                    <span class="font-secondary text">enviar</span>
+                </button>
             </div>
 
         </form>

@@ -8,6 +8,9 @@
 // Section – Carrossel
 // =======================
 .section-carousel {
+
+
+
   margin-top: -130px;
 
   hr { transform-origin: left; }
@@ -172,7 +175,32 @@
       padding: 16px 84px;
     }
   }
+
+
+  &.second {
+    margin-top: -33px;
+
+    .wrap {
+      padding-top: 0;
+    }
+
+    hr {
+      margin-bottom: 60px;
+      width: 300%;
+    }
+
+    .swiper-scrollbar-horizontal {
+      background: #B8B1A5;
+    }
+    .swiper.slide-imoveis .swiper-slide h2 {
+      left: 0;
+    }
+
+  }
 }
+
+
+
 :root {
   --swiper-navigation-color: #FFF;
   --swiper-scrollbar-bottom: 35px;
@@ -252,5 +280,21 @@
 
   .west-stage {
     margin-top: 40px;
+  }
+}
+
+// Notebook
+@media only screen and (min-width: 1025px) and (max-width: 1780px) {
+  .section-carousel .swiper.slide-imoveis {
+    max-width: 840px;
+  }
+
+  .section-carousel .swiper.slide-imoveis .swiper-slide h2 {
+    left: 325px !important;
+
+  }
+
+  .pl13 {
+    padding-left: 60px !important;
   }
 }
